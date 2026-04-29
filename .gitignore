@@ -1,0 +1,17 @@
+.tmp/
+.gocache/
+.edge-profile/
+
+# TALL private memory
+.agent-loop/memory/private/
+*.private.md
+
+node_modules/
+dist/
+build/
+
+.DS_Store
+Thumbs.db
+
+.claude/*
+.codex/*
