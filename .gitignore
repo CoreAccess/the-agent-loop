@@ -13,6 +13,6 @@ build/
 .DS_Store
 Thumbs.db
 
-.calude/
+# Agent Specific Folders
 .claude/*
 .codex/*
