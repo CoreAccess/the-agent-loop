@@ -66,6 +66,7 @@ Last updated: 2026-04-29
 - Clarified terminology: "dogfood" means applying your own product/framework to itself, but it is jargon. Use "apply the framework to itself" or "self-application" instead.
 - Updated all six Category 6 research docs with Q1-Q50 decisions, removed answered re-grill prompt sections, and corrected v1 project-local personalization drift.
 - Ran housekeeping: `.tmp` contained no files to clean up, stale old-name references are only historical/superseded entries, and `BACKLOG.md` now moves Category 8 to the top of the research queue.
+- Created the initial local git commit and pushed `main` to `https://github.com/CoreAccess/the-agent-loop.git`.
 
 ---
 
@@ -80,6 +81,7 @@ Last updated: 2026-04-29
 ## Blockers / Open Decisions
 
 - Category 6 is complete through housekeeping. Awaiting closeout confirmation and next-category choice.
+- GitHub remote is configured as `origin`; `main` tracks `origin/main`.
 - Public name: `The Agent Learning Loop (TALL)`. Short/spoken name: `The Agent Loop`. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`. Conflict check found no obvious exact-name ownership for the long form, but the component phrases are broad/common in agent architecture writing.
 - Q6 from Category 2 (agent freedom vs. guardrails + code cleanup) still needs dedicated research, likely alongside Category 8.
 - Category 13 (self-healing / preference learning) remains future scope.

@@ -788,3 +788,9 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Verified old `Agent Project Foundation` references are historical/superseded decision-log entries, not active naming drift.
 - Updated `BACKLOG.md` to remove Category 6 from the active research queue and move Category 8 - Change Gates & Guardrails to the top recommendation.
 - Updated `STATUS.md` to Step 6 closeout. Recommended next category is Category 8 because it directly covers the deferred Q6 thread on agent freedom, large reworks, and code cleanup.
+
+### GitHub repository published (logged 2026-04-29)
+- Created the initial local git commit: `1d2369d Initial TALL research framework`.
+- Verified `.claude/` and `.codex/` are ignored and not tracked.
+- Added remote `origin` as `https://github.com/CoreAccess/the-agent-loop.git`.
+- Pushed `main` to GitHub and set it to track `origin/main`.
