@@ -789,6 +789,12 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Updated `BACKLOG.md` to remove Category 6 from the active research queue and move Category 8 - Change Gates & Guardrails to the top recommendation.
 - Updated `STATUS.md` to Step 6 closeout. Recommended next category is Category 8 because it directly covers the deferred Q6 thread on agent freedom, large reworks, and code cleanup.
 
+### Session closed for the night (logged 2026-04-29)
+- User chose not to start Category 8 tonight and asked to save out until the next session.
+- Updated `STATUS.md` to mark Category 6 complete and closed out, with no active category.
+- Next recommended action: confirm whether to start Category 8 - Change Gates & Guardrails. If confirmed, update `STATUS.md` to active Category 8 / Step 1 before researching.
+- GitHub repo is configured and pushed at `https://github.com/CoreAccess/the-agent-loop.git`; `main` tracks `origin/main`.
+
 ### GitHub repository published (logged 2026-04-29)
 - Created the initial local git commit: `1d2369d Initial TALL research framework`.
 - Verified `.claude/` and `.codex/` are ignored and not tracked.

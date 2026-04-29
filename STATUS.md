@@ -6,9 +6,9 @@ Last updated: 2026-04-29
 
 ## Where We Are
 
-**Phase:** Research - Category 6 (Memory Systems)  
-**Active category:** 6 - Memory Systems  
-**Cycle step:** Step 6 - Session log / closeout. Category 6 first-pass deep research, re-grill Q1-Q50, docs update, and housekeeping are complete. The framework is now named `The Agent Learning Loop (TALL)`, with `The Agent Loop` as the short/spoken name.
+**Phase:** Category 6 complete - choosing next category  
+**Active category:** None; next recommended category is 8 - Change Gates & Guardrails  
+**Cycle step:** Closed for the night on 2026-04-29. Category 6 first-pass deep research, re-grill Q1-Q50, docs update, housekeeping, initial git commit, and GitHub push are complete. The framework is named `The Agent Learning Loop (TALL)`, with `The Agent Loop` as the short/spoken name.
 
 ---
 
@@ -67,20 +67,21 @@ Last updated: 2026-04-29
 - Updated all six Category 6 research docs with Q1-Q50 decisions, removed answered re-grill prompt sections, and corrected v1 project-local personalization drift.
 - Ran housekeeping: `.tmp` contained no files to clean up, stale old-name references are only historical/superseded entries, and `BACKLOG.md` now moves Category 8 to the top of the research queue.
 - Created the initial local git commit and pushed `main` to `https://github.com/CoreAccess/the-agent-loop.git`.
+- Closed the session for the night. Next pickup should start by confirming Category 8 or choosing a different next category.
 
 ---
 
 ## Up Next
 
-1. Confirm closeout and choose the next category.
-2. Recommendation: Category 8 - Change Gates & Guardrails, because it directly covers the deferred Q6 thread on agent freedom, large reworks, and code cleanup.
+1. At the next session, confirm whether to start Category 8 - Change Gates & Guardrails.
+2. If confirmed, update `STATUS.md` to active Category 8 / Step 1 and begin the deep-research cycle.
 3. Keep the framework evaluation/testing thread visible for Category 7; do not derail the next category unless the user explicitly chooses to switch.
 
 ---
 
 ## Blockers / Open Decisions
 
-- Category 6 is complete through housekeeping. Awaiting closeout confirmation and next-category choice.
+- Category 6 is complete and closed out. Awaiting next-category choice.
 - GitHub remote is configured as `origin`; `main` tracks `origin/main`.
 - Public name: `The Agent Learning Loop (TALL)`. Short/spoken name: `The Agent Loop`. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`. Conflict check found no obvious exact-name ownership for the long form, but the component phrases are broad/common in agent architecture writing.
 - Q6 from Category 2 (agent freedom vs. guardrails + code cleanup) still needs dedicated research, likely alongside Category 8.
@@ -96,4 +97,4 @@ Last updated: 2026-04-29
 2. Read `memory/project_framework_qa.md`.
 3. Read this file for current state.
 4. Read the six docs in `docs/research/category-6/`.
-5. Confirm Category 6 closeout and choose the next category. Recommended: Category 8 - Change Gates & Guardrails.
+5. Confirm whether to start Category 8 - Change Gates & Guardrails. If yes, update this file to active Category 8 / Step 1 before researching.
