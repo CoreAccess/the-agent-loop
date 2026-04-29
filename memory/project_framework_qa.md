@@ -800,3 +800,10 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Verified `.claude/` and `.codex/` are ignored and not tracked.
 - Added remote `origin` as `https://github.com/CoreAccess/the-agent-loop.git`.
 - Pushed `main` to GitHub and set it to track `origin/main`.
+
+### AGENTS-SAMPLE.md removed from GitHub history (logged 2026-04-29)
+- User noticed `AGENTS-SAMPLE.md` should have been ignored before the GitHub push and added it to `.gitignore`.
+- Removed `AGENTS-SAMPLE.md` from tracking while keeping the local ignored copy.
+- Rewrote git history to remove `AGENTS-SAMPLE.md` from every reachable commit, deleted local filter-branch backup refs, expired reflogs, ran garbage collection, and force-pushed cleaned `main` to GitHub.
+- Verification showed no reachable commits or objects listing `AGENTS-SAMPLE.md`; remote `main` moved to cleaned commit `e1c0453`.
+- Secret-pattern scans found only documentation text about secrets/tokens, not actual credential values, so there was nothing concrete to rotate from the exposed file.
