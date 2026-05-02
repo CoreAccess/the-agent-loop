@@ -6,9 +6,9 @@ Last updated: 2026-05-02
 
 ## Where We Are
 
-**Phase:** v0.1 release ZIP and README starter prompt model refined  
+**Phase:** v0.1 frozen; v0.2 planning next
 **Active category:** None; Category 8 - Change Gates & Guardrails is complete.  
-**Cycle step:** Initial v0.1 release-source layout now lives at `releases/v0.1/.agent-loop/` and targets a GitHub Release ZIP containing only `.agent-loop/`, with GitHub README install steps and a short starter prompt. Next step is scaffold validation for blank and existing projects.
+**Cycle step:** v0.1 is accepted as good enough and should no longer receive product changes. Future scaffold/product changes should land in v0.2.
 
 ---
 
@@ -33,6 +33,32 @@ Last updated: 2026-05-02
 
 ## Completed In This Pickup
 
+- Reviewed user-provided Experiment 005 launch-test output in `experiments/experiment-005-v01-launch-test-results/`.
+- Opened `agent-response.png`; actor reported updating only `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md`.
+- Compared `agent-loop-results/` against `releases/v0.1/.agent-loop/`; only `GOAL.md` and `STATUS.md` differ.
+- Inspected `releases/v0.1/v0.1.zip`; archive root contains only `.agent-loop/`, matching the intended release package shape.
+- Created `experiments/experiment-005-v01-launch-test-results/evaluation/evaluator-review.md`.
+- Experiment 005 result: 12/21 partial pass after root-adapter clarification. ZIP/package fidelity and cautious change discipline passed; blank-project onboarding failed to create root `AGENTS.md` and failed to ask for the actual project objective before drafting a generic onboarding Goal.
+- Root `AGENTS.md` finding: user clarified the desired v0.1 behavior. The ZIP should still contain only `.agent-loop/`, but onboarding must create root `AGENTS.md` for blank projects or carefully merge a marked adapter into existing root `AGENTS.md`; otherwise future prompts will not load the framework.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md` so onboarding creates/updates root `AGENTS.md`, asks blank-project blocking questions before drafting Goal/Status, and keeps framework working files inside `.agent-loop/`.
+- Updated root `README.md` starter prompt to require root `AGENTS.md` creation/merge before Goal drafting.
+- Updated `releases/v0.1/.agent-loop/README.md`, `GOAL.md`, `STATUS.md`, and `templates/reflect-checklist.md` to reflect root adapter onboarding.
+- Rebuilt `releases/v0.1/v0.1.zip` from the updated release source using `tar -a -cf` so archive entries use portable `.agent-loop/...` paths.
+- Static ZIP validation passed: all archive entries are under `.agent-loop/`; no root `AGENTS.md` is shipped; archived `.agent-loop/AGENTS.md` contains root adapter markers plus blank-project and existing-project rules.
+- Created `experiments/experiment-006-v01-root-agents-retest/` with a blank-project and existing-project retest matrix, run prompt, and evaluation rubric.
+- Evaluated the user-provided Experiment 006 blank-project rerun in `experiments/experiment-006-v01-root-agents-retest/results/`.
+- Result: blank-project retest is a partial pass. Root `AGENTS.md` was created correctly and `.agent-loop/` scaffold files were unchanged, but the actor asked all five onboarding questions at once without recommendations.
+- Created `experiments/experiment-006-v01-root-agents-retest/evaluation/evaluator-review.md`.
+- Initially adopted a one-question onboarding refinement with recommendations; this was superseded after the next rerun showed blank-project recommendations were poorly grounded.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md`, root `README.md`, Experiment 006 `RUN_PROMPT.md`, and the Experiment 006 rubric with the one-question interview rule.
+- Rebuilt `releases/v0.1/v0.1.zip` again and validated that archived `.agent-loop/AGENTS.md` contains both the root adapter rules and the one-question onboarding rule.
+- Reviewed another Experiment 006 rerun screenshot. The actor now created root `AGENTS.md`, asked only Question 1 of 5, and waited before drafting Goal/Status, but it still dumped too much repo state and suggested a blank-project objective from the folder name.
+- Refined the v0.1 onboarding style again: no full repo inspection dump in the first response, no recommended answers for onboarding questions, and never infer/suggest a blank-project objective from the folder name.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md`, root `README.md`, Experiment 006 `RUN_PROMPT.md`, rubric, and evaluator review to reflect the concise five-question onboarding style.
+- Rebuilt `releases/v0.1/v0.1.zip` and validated that archived `.agent-loop/AGENTS.md` contains the no-dump, no-recommendation, no-folder-objective, and `Question 1 of 5` rules.
+- Added the full starter prompt to `releases/v0.1/.agent-loop/README.md` so the downloaded ZIP is self-contained without adding a separate `START_HERE.md` or root prompt file.
+- User accepted the current v0.1 state as good enough for v0.1 and asked to stop changing it.
+- Decided all future scaffold/product changes now land on v0.2. Do not edit `releases/v0.1/.agent-loop/` or `releases/v0.1/v0.1.zip` unless the user explicitly approves a critical v0.1 packaging correction.
 - Confirmed Category 8 - Change Gates & Guardrails as the next active research category.
 - Reviewed Search Engine Land's May 1, 2026 article "How to build SEO agent skills that actually work" and flagged it as a future Category 5 source with Category 8 overlap.
 - Completed first-pass Category 8 deep research and created an index plus five research docs:
@@ -118,29 +144,29 @@ Last updated: 2026-05-02
 
 ## Up Next
 
-1. Create a scaffold-only validation capsule from `releases/v0.1/.agent-loop/`.
-2. Test blank-project flow: copy only `.agent-loop/` into a blank project, open with an agent, run the README starter prompt, confirm `.agent-loop/AGENTS.md` starts onboarding, fill `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md`, then perform one guarded edit.
-3. Test existing-project flow: copy only `.agent-loop/` into a small existing repo, run the README starter prompt, confirm the actor inspects first, avoids overwrites, and drafts `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md`.
-4. Create packaging instructions for a GitHub Release ZIP whose archive root contains only `.agent-loop/`, not the full source repo.
-5. Alternative: run the clean unsafe-memory rerun if the Experiment 003 caveat still needs isolated validation.
+1. Start v0.2 planning from the known v0.1 lessons: root `AGENTS.md` adapter, concise five-question onboarding, existing-project merge behavior, and self-contained scaffold README.
+2. Decide the first v0.2 validation target: existing-project onboarding, guided onboarding UX, or broader framework evaluation.
+3. Keep `releases/v0.1/` frozen as the baseline artifact.
 
 ---
 
 ## Blockers / Open Decisions
 
-- Category 6 is complete and closed out. Category 8 is now active.
+- Category 6 and Category 8 are complete and closed out.
 - GitHub remote is configured as `origin`; `main` tracks `origin/main`.
 - Public name: `The Agent Loop`. Drop `The Agent Learning Loop` and `TALL` except as historical context. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`.
 - v0.1 primary goal: minimal tested project-local one-agent scaffold supported by Experiments 001-003. Self-application is the operating method, not the v0.1 product surface.
 - v0.1 public loop wording: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
 - Goal artifact naming: use **Goal** in active/public framework language, not `Goal Packet` or `The Goal`. Historical experiment paths and titles may remain unchanged.
-- Filesystem organization is now under review before selecting the next implementation/research task.
+- v0.1 is frozen as the baseline artifact. Future scaffold/product changes land on v0.2.
 - Local agent folder convention: use `.agents/` for project-local agent skills/config. Restart check confirmed `.codex/`, `.claude/`, and `.tmp/` are absent; `.agents/` exists and remains ignored.
-- Q6 from Category 2 (agent freedom vs. guardrails + code cleanup) still needs dedicated research, likely alongside Category 8.
+- Category 2 Q6 agent freedom / guardrails / cleanup was resolved through Category 8 research and Experiment 004, then promoted into the v0.1 scaffold.
 - Category 13 (self-healing / preference learning) remains future scope.
 - Cross-project personalization is deferred. V1 `.agent-loop` is project-local; future CLI/shared-memory work may allow user preferences and learned tastes to carry across projects.
 - Framework evaluation/testing needs research: how to test goal pursuit, adaptability, stop-rule obedience, and signal-vs-noise discipline in Codex without creating fake confidence.
 - Experiment 004 passed with one caveat that has been converted into scaffold wording: record git/dirty state and checkpoint status before significant edits.
+- Experiment 005 found a v0.1 onboarding gap: scaffold-only blank projects need root `AGENTS.md` creation, a blocking-question path before Goal drafting, and existing projects need careful root `AGENTS.md` merge behavior.
+- Experiment 006 blank-project reruns showed the root adapter fix works at a basic level; remaining gap is guided onboarding quality, now refined to concise five-question framing with no recommendations and no folder-name objective inference.
 
 ---
 

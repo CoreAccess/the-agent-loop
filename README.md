@@ -53,12 +53,14 @@ Use the uploaded scaffold asset, not GitHub's automatic source-code ZIP. The sou
 Starter prompt:
 
 ```text
-Read `.agent-loop/AGENTS.md` and start The Agent Loop onboarding for this project. Inspect the repo first, then draft `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md` for my approval before making code changes.
+Read `.agent-loop/AGENTS.md` and start The Agent Loop onboarding for this project. First create or carefully update root `AGENTS.md` so future prompts load The Agent Loop, then inspect the repo. If the project objective is not clear yet, explain that there are five quick onboarding questions and ask me Question 1 of 5 only. Do not suggest a project objective, do not draft `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md`, and do not make code changes until the blocking questions are answered.
 ```
 
-The agent should inspect the repository, ask only for blocking setup decisions, and draft `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md` for approval before implementation.
+The agent should create or carefully merge a root `AGENTS.md` adapter, inspect the repository, ask only for blocking setup decisions one at a time, then draft `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md` for approval before implementation.
 
-The ZIP should not include this repository's research archive, experiments, session memory, internal decision history, a root project `README.md`, a root prompt file, a root `AGENTS.md`, or a visible root `templates/` folder.
+The same starter prompt is included inside `.agent-loop/README.md` in the release ZIP.
+
+The ZIP should not include this repository's research archive, experiments, session memory, internal decision history, a root project `README.md`, a root prompt file, a root `AGENTS.md`, or a visible root `templates/` folder. Root `AGENTS.md` is created or updated by the onboarding agent after the user runs the starter prompt.
 
 The current v0.1 release source lives at `releases/v0.1/.agent-loop/`.
 

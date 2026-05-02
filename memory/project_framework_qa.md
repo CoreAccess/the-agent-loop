@@ -104,11 +104,18 @@ Date established: 2026-04-27
 - The release source in this repository should live directly at `releases/v0.1/.agent-loop/`, not under `.agent-loop/scaffold/`.
 - The download should be an uploaded release asset, not GitHub's automatic source-code ZIP, because the source archive includes the full research repository.
 - Users install it by downloading the release ZIP, extracting it, copying `.agent-loop/` into their project root, opening their coding agent, and running a short starter prompt from the GitHub README.
-- No `START_HERE.md`, root prompt file, root project `README.md`, root `AGENTS.md`, root `templates/`, or root `memory/` should be installed by default.
+- No `START_HERE.md`, root prompt file, root project `README.md`, root `AGENTS.md`, root `templates/`, or root `memory/` should be included in the ZIP by default.
 - The starter prompt is acceptable as the v0.1 bootstrap bridge because nested `.agent-loop/AGENTS.md` is not auto-discovered reliably in existing projects.
-- Recommended starter prompt: `Read .agent-loop/AGENTS.md and start The Agent Loop onboarding for this project. Inspect the repo first, then draft .agent-loop/GOAL.md and .agent-loop/STATUS.md for my approval before making code changes.`
-- During onboarding, the agent may propose future root agent-instruction integration for easier future sessions, but must ask before creating or editing root instruction files.
+- Recommended starter prompt: `Read .agent-loop/AGENTS.md and start The Agent Loop onboarding for this project. First create or carefully update root AGENTS.md so future prompts load The Agent Loop, then inspect the repo. If the project objective is not clear yet, explain that there are five quick onboarding questions and ask me Question 1 of 5 only. Do not suggest a project objective, do not draft .agent-loop/GOAL.md or .agent-loop/STATUS.md, and do not make code changes until the blocking questions are answered.`
+- During onboarding, the agent must create root `AGENTS.md` for blank projects or carefully merge a marked The Agent Loop adapter into an existing root `AGENTS.md` so future prompts load `.agent-loop/AGENTS.md`.
 - Rationale: this keeps the install surface collision-free for existing projects while preserving a very simple first-run path.
+
+### v0.1 root AGENTS.md onboarding integration (decided 2026-05-02)
+- The v0.1 ZIP should still contain only `.agent-loop/`; root `AGENTS.md` is not shipped in the archive.
+- The first onboarding run must create root `AGENTS.md` in new/empty projects so future prompts automatically load The Agent Loop.
+- If root `AGENTS.md` already exists, onboarding must preserve existing content and add or refresh a marked The Agent Loop adapter block. It should update only inside `BEGIN THE AGENT LOOP` / `END THE AGENT LOOP` markers when those markers exist.
+- Keep `GOAL.md`, `STATUS.md`, `MEMORY.md`, framework memory, framework README, and framework templates inside `.agent-loop/` to avoid collisions with user-owned root files.
+- Rationale: without root `AGENTS.md` integration, subsequent prompts will not reliably use the framework after the initial README starter prompt.
 
 ## Resolved Questions
 
@@ -1085,3 +1092,58 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Updated root `README.md` to present that flow directly under `Use v0.1`.
 - Kept the warning to use the uploaded scaffold asset, not GitHub's automatic source-code ZIP.
 - Starter prompt in root README: `Read .agent-loop/AGENTS.md and start The Agent Loop onboarding for this project. Inspect the repo first, then draft .agent-loop/GOAL.md and .agent-loop/STATUS.md for my approval before making code changes.`
+
+### Experiment 005 blank-project launch test evaluated (logged 2026-05-02)
+- User ran the first v0.1 launch test in an empty project and captured results at `experiments/experiment-005-v01-launch-test-results/`.
+- Inspected `agent-response.png`: actor reported updating only `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md`, and made no code, dependency, git, or root instruction changes.
+- Compared `agent-loop-results/` against `releases/v0.1/.agent-loop/`; only `GOAL.md` and `STATUS.md` differ.
+- Inspected `releases/v0.1/v0.1.zip`; archive root contains only `.agent-loop/`, matching the intended release ZIP shape.
+- Created `experiments/experiment-005-v01-launch-test-results/evaluation/evaluator-review.md`.
+- Independent score: 12/21 after root-adapter clarification, partial pass. Package fidelity, file discipline, workspace inspection, and guardrail behavior passed.
+- Main failure: blank-project onboarding drafted a generic framework-initialization Goal instead of asking the minimum blocking questions needed to capture the user's actual project objective, stack preference, success criteria, constraints, and first milestone.
+- Root `AGENTS.md` finding was refined by the user after review: missing root `AGENTS.md` is a v0.1 onboarding failure because future prompts will not reliably load `.agent-loop/AGENTS.md`.
+- Recommended next fix: tighten `releases/v0.1/.agent-loop/AGENTS.md` and the README starter prompt so scaffold-only blank projects create root `AGENTS.md`, ask blocking onboarding questions first, then draft Goal/Status.
+
+### v0.1 root AGENTS integration implemented in release source (logged 2026-05-02)
+- User clarified that root `AGENTS.md` must be created or updated during onboarding, even though it should not be included in the ZIP archive.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md` with required root `AGENTS.md` adapter behavior for blank and existing projects.
+- For blank projects, onboarding now creates root `AGENTS.md` immediately, keeps all other framework working files inside `.agent-loop/`, asks for the actual project objective and minimum blocking setup details, then drafts `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md`.
+- For existing projects, onboarding now preserves existing root `AGENTS.md` instructions and adds or refreshes a marked The Agent Loop adapter block. If markers already exist, only the marked block should be updated.
+- Updated root `README.md` starter prompt so it tells the actor to create or carefully update root `AGENTS.md` before Goal drafting.
+- Updated `releases/v0.1/.agent-loop/README.md`, `GOAL.md`, `STATUS.md`, and `templates/reflect-checklist.md` to reflect root adapter onboarding.
+- Rebuilt `releases/v0.1/v0.1.zip` from the updated release source with `tar -a -cf`, after `Compress-Archive` produced backslash-style ZIP entries that were less portable.
+- Static validation passed: ZIP entries are under `.agent-loop/`, no root `AGENTS.md` is shipped, and archived `.agent-loop/AGENTS.md` contains root adapter markers plus blank-project and existing-project rules.
+- Created `experiments/experiment-006-v01-root-agents-retest/` with a retest matrix, run prompt, and evaluation rubric for blank-project root creation and existing-project root merge behavior.
+
+### Experiment 006 blank-project rerun and guided onboarding refinement (logged 2026-05-02)
+- User reran the blank-project v0.1 onboarding test and captured results under `experiments/experiment-006-v01-root-agents-retest/results/`.
+- The actor created root `AGENTS.md` with the expected adapter block.
+- Comparing `results/.agent-loop/` against `releases/v0.1/.agent-loop/` showed no scaffold file changes.
+- The actor correctly did not draft `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md` before receiving the user's actual project objective.
+- Remaining gap: actor asked all five onboarding questions at once and did not provide recommended answers, making onboarding feel like a form instead of a guided interview.
+- Created `experiments/experiment-006-v01-root-agents-retest/evaluation/evaluator-review.md`.
+- Initially adopted a v0.1 onboarding interaction refinement: ask one blocking question at a time, provide the recommended answer based on repo evidence and sensible defaults, wait for the user, then continue until the Goal can be drafted. Superseded below: onboarding questions should not include recommended answers.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md`, root `README.md`, Experiment 006 `RUN_PROMPT.md`, and `evaluation-rubric.md` with the one-question guided interview rule.
+- Rebuilt `releases/v0.1/v0.1.zip` and validated that the archive still ships only `.agent-loop/`, no root `AGENTS.md`, and archived `.agent-loop/AGENTS.md` contains both root adapter and guided interview rules.
+
+### Experiment 006 onboarding response style refinement (logged 2026-05-02)
+- User reran onboarding with the starter prompt and shared a screenshot.
+- The actor created root `AGENTS.md`, asked only Question 1 of 5, and waited before drafting Goal/Status, so the root adapter and one-question mechanics improved.
+- Remaining issues: actor dumped a repo inspection summary into the first response, and it suggested a project objective from the folder name `AgentExperimentations`.
+- User clarified the desired UX: first response should briefly explain why the five onboarding questions matter, say which question the user is on, ask one question at a time, and avoid suggestions for the onboarding answers.
+- Updated v0.1 onboarding style: no full inspection dump in chat, no recommended answers for onboarding questions, and never infer or suggest a blank-project objective from the folder name.
+- Updated `releases/v0.1/.agent-loop/AGENTS.md`, root `README.md`, Experiment 006 `RUN_PROMPT.md`, `evaluation-rubric.md`, and evaluator review.
+- Rebuilt `releases/v0.1/v0.1.zip` and validated that archived `.agent-loop/AGENTS.md` contains the no-dump, no-recommendation, no-folder-objective, and `Question 1 of 5` onboarding rules.
+
+### v0.1 starter prompt duplicated into scaffold README (logged 2026-05-02)
+- User noted the starter prompt was easy to miss and asked whether it should be included in `README.md`.
+- Root `README.md` already had the starter prompt under `Use v0.1`, but the release ZIP's `.agent-loop/README.md` only pointed users back to the GitHub README.
+- Updated `releases/v0.1/.agent-loop/README.md` to include the full starter prompt directly.
+- Kept the no-`START_HERE.md` decision: the prompt is documentation inside the existing `.agent-loop/README.md`, not a separate prompt file or root file.
+
+### v0.1 frozen and v0.2 becomes next change target (decided 2026-05-02)
+- User accepted the current v0.1 state as good enough for v0.1 and asked to stop making changes to it.
+- v0.1 final baseline includes: scaffold-only ZIP containing `.agent-loop/`; root `AGENTS.md` created/merged during onboarding; Goal/Status/Memory/templates kept inside `.agent-loop/`; concise five-question onboarding style; starter prompt included in both root `README.md` and `.agent-loop/README.md`.
+- All future scaffold/product changes should land in v0.2, not v0.1.
+- Do not edit `releases/v0.1/.agent-loop/` or `releases/v0.1/v0.1.zip` unless the user explicitly approves a critical v0.1 packaging correction.
+- Next session should begin v0.2 planning from the lessons in Experiments 005-006, especially existing-project adoption, guided onboarding UX, and second-prompt behavior after root adapter creation.

@@ -6,11 +6,7 @@ In v0.1, the framework lives inside `.agent-loop/` so it does not collide with n
 
 The v0.1 release ZIP should contain this `.agent-loop/` folder only.
 
-To start onboarding, open the project in your coding agent and paste this starter prompt:
-
-```text
-Read `.agent-loop/AGENTS.md` and start The Agent Loop onboarding for this project. First create or carefully update root `AGENTS.md` so future prompts load The Agent Loop, then inspect the repo. If the project objective is not clear yet, explain that there are five quick onboarding questions and ask me Question 1 of 5 only. Do not suggest a project objective, do not draft `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md`, and do not make code changes until the blocking questions are answered.
-```
+To start onboarding, the user gives their coding agent the starter prompt from the GitHub README. That prompt tells the agent to read `.agent-loop/AGENTS.md`.
 
 No `START_HERE.md`, root `README.md`, root `templates/`, or root adapter file belongs in the v0.1 ZIP.
 

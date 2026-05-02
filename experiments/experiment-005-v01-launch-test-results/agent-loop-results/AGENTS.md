@@ -22,99 +22,22 @@ If `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md` is blank, placeholder-only, 
 On the user's first substantive request:
 
 1. Start onboarding automatically.
-2. Inspect the repository structure before asking broad questions.
-3. Create or update root `AGENTS.md` so future prompts automatically load The Agent Loop.
-4. Ask only the minimum blocking questions needed to draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md`, using the one-question interview style below.
-5. Do not build code yet.
-6. After the user answers, draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md`.
-7. Stop and ask the user to approve or edit the Goal before implementation.
-
-## Onboarding Interview Style
-
-Use a guided interview, not a form.
-
-1. Keep the first onboarding response short and user-facing.
-2. Do not dump a full repo inspection report into chat. Record detailed inspection state in `.agent-loop/STATUS.md` after the onboarding answers are collected.
-3. Start by saying that The Agent Loop is set up for future prompts and that five quick onboarding questions are needed before drafting Goal and Status.
-4. Ask one blocking question at a time, clearly labeled `Question 1 of 5`, `Question 2 of 5`, and so on.
-5. Do not provide recommended answers for the five onboarding questions.
-6. For blank projects, never infer or suggest the project objective from the folder name.
-7. For existing projects, use inspected repo facts only to make questions more specific. Example: "I found a Vite app. Question 2 of 5: should this project keep using that stack?"
-8. Wait for the user's answer before asking the next blocking question.
-9. Keep non-blocking unknowns as visible defaults in `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md`.
-10. Do not draft `.agent-loop/GOAL.md` until the blocking questions needed for a useful first Goal are answered.
-
-For a blank project, the first onboarding response should follow this shape:
-
-```text
-The Agent Loop is set up for future prompts. Before I draft `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md`, I need five quick onboarding answers so the project starts with the right goal, constraints, and verification path.
-
-Question 1 of 5: What should this project build or accomplish?
-```
-
-For a blank project, resolve these questions one at a time:
-
-1. What should this project build or accomplish?
-2. Should the agent use a preferred stack, or suggest a default?
-3. What is the first useful milestone?
-4. What hard constraints should the agent respect?
-5. How should success be verified?
-
-For a new or empty project:
-
-1. Treat a workspace with only `.agent-loop/` files, no source files, no root docs, no package manifests, and no root `AGENTS.md` as a blank project.
-2. Create root `AGENTS.md` immediately with the root adapter content from the "Root AGENTS.md Adapter" section.
-3. Keep `.agent-loop/GOAL.md`, `.agent-loop/STATUS.md`, `.agent-loop/MEMORY.md`, framework memory, and templates inside `.agent-loop/`.
-4. Ask for the actual project objective before drafting the Goal, using the one-question interview style.
-5. Then draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md` for review.
+2. Ask only the minimum questions needed to draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md`.
+3. Do not build code yet.
+4. After the user answers, draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md`.
+5. Stop and ask the user to approve or edit the Goal before implementation.
 
 For an existing project:
 
 1. Inspect the repository structure before asking broad questions.
 2. Identify existing stack, commands, docs, tests, package files, and agent instruction files.
-3. If root `AGENTS.md` does not exist, create it with the root adapter content from the "Root AGENTS.md Adapter" section.
-4. If root `AGENTS.md` already exists, preserve the user's existing instructions and add or refresh only The Agent Loop adapter block from the "Root AGENTS.md Adapter" section.
-5. If the existing file already has `BEGIN THE AGENT LOOP` / `END THE AGENT LOOP` markers, update only the content inside those markers.
-6. If the existing file has no markers, append the adapter block under a clear `## The Agent Loop` heading. Do not delete, rewrite, or reorder existing project instructions.
-7. If existing instructions conflict with this scaffold, keep both, summarize the conflict in `.agent-loop/STATUS.md`, and ask the user how to resolve it before implementation.
-8. Ask only for missing decisions that block safe setup, using the one-question interview style.
-9. Draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md` for review before implementation.
+3. Do not overwrite existing instructions, docs, memory, or planning files without approval.
+4. If existing files conflict with this scaffold, summarize the conflict and ask whether to merge, skip, or replace.
+5. Ask only for missing decisions that block safe setup.
+6. Draft `.agent-loop/GOAL.md` and update `.agent-loop/STATUS.md` for review before implementation.
+7. If future automatic loading is useful, propose the smallest root agent-instruction integration and ask before editing any existing root instruction file.
 
 The starter prompt is not a file in the project. It lives in the GitHub README so the ZIP can contain only `.agent-loop/`.
-
-## Root AGENTS.md Adapter
-
-Root `AGENTS.md` is the only root file The Agent Loop should create or update during onboarding. This is necessary because future agent sessions usually auto-load root instructions, not nested `.agent-loop/AGENTS.md`.
-
-When creating a new root `AGENTS.md`, use this content:
-
-```markdown
-# AGENTS.md
-
-This project uses The Agent Loop.
-
-<!-- BEGIN THE AGENT LOOP -->
-At the start of every session, read and follow `.agent-loop/AGENTS.md`.
-
-Then read `.agent-loop/STATUS.md`, `.agent-loop/GOAL.md`, and `.agent-loop/MEMORY.md` as directed by `.agent-loop/AGENTS.md`.
-
-Keep framework working files inside `.agent-loop/`. Do not create root `GOAL.md`, `STATUS.md`, `MEMORY.md`, framework `README.md`, root `templates/`, or root `memory/` files unless the user explicitly asks.
-<!-- END THE AGENT LOOP -->
-```
-
-When updating an existing root `AGENTS.md`, add only this adapter block:
-
-```markdown
-## The Agent Loop
-
-<!-- BEGIN THE AGENT LOOP -->
-At the start of every session, read and follow `.agent-loop/AGENTS.md`.
-
-Then read `.agent-loop/STATUS.md`, `.agent-loop/GOAL.md`, and `.agent-loop/MEMORY.md` as directed by `.agent-loop/AGENTS.md`.
-
-Keep framework working files inside `.agent-loop/`. Do not create root `GOAL.md`, `STATUS.md`, `MEMORY.md`, framework `README.md`, root `templates/`, or root `memory/` files unless the user explicitly asks.
-<!-- END THE AGENT LOOP -->
-```
 
 ## Context Loading
 

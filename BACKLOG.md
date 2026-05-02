@@ -50,9 +50,10 @@ Priority order is a recommendation — user decides at each cycle.
 
 ## Open Questions — Framework-Wide
 
-- **v0.1 scaffold validation:** Initial release-source draft exists under `releases/v0.1/.agent-loop/`. Next, test blank-project and existing-project flows by copying only `.agent-loop/` into the project and running the README starter prompt.
-- **README prototype clarity:** Current README distinguishes research repo vs scaffold-only release ZIP direction. Once the release asset exists, replace placeholder command shape with the final GitHub Releases download link and exact install wording.
-- **Distribution mechanism:** v0.1 should use a GitHub Release ZIP containing only `.agent-loop/`. Separate starter repo, scaffold branch/tag, root instruction integration, and prompt file are deferred unless validation proves the README prompt flow is not enough.
+- **v0.2 planning:** v0.1 is frozen. Future scaffold/product changes should land in v0.2, starting from the lessons in Experiments 005-006.
+- **v0.2 scaffold validation:** Retest concise five-question onboarding, existing-project root `AGENTS.md` merge behavior, and downstream "second prompt" behavior after root adapter creation.
+- **README/release clarity:** For v0.2, replace any placeholder release wording with final GitHub Releases links and exact install wording.
+- **Distribution mechanism:** v0.1 uses a GitHub Release ZIP containing only `.agent-loop/`. v0.2 can revisit separate starter repo, scaffold branch/tag, prompt placement, or packaging automation if validation shows friction.
 - **Framework evaluation/testing:** How do we test The Agent Loop itself for goal pursuit, adaptability, stop-rule obedience, signal-vs-noise discipline, and real-world usefulness inside Codex?
 - **File system structure:** How should the framework's own directory structure be organized as it grows?
 - **Category 11 scope:** Which agentic patterns (ReAct, Reflection, HITL, Planning) are core v1 vs v2?
