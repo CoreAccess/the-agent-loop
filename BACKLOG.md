@@ -53,7 +53,7 @@ Priority order is a recommendation — user decides at each cycle.
 
 - **Q6 — Agent freedom vs. guardrails:** What specifically counts as a "large rework" that warrants stopping to ask? Research needed. Initial position: full autonomy inside codebase; only stop for very large reworks or significant refactors.
 - **Agent code cleanup:** How do we enforce the cleanup mandate in practice? What patterns/prompts reliably make agents remove dead code?
-- **Framework evaluation/testing:** How do we test The Agent Learning Loop (TALL) itself for goal pursuit, adaptability, stop-rule obedience, signal-vs-noise discipline, and real-world usefulness inside Codex?
+- **Framework evaluation/testing:** How do we test The Agent Loop itself for goal pursuit, adaptability, stop-rule obedience, signal-vs-noise discipline, and real-world usefulness inside Codex?
 - **File system structure:** How should the framework's own directory structure be organized as it grows?
 - **Category 11 scope:** Which agentic patterns (ReAct, Reflection, HITL, Planning) are core v1 vs v2?
 - **Cross-agent portability (Category 5):** How much of each skill can be shared across Claude/Gemini/Codex vs. must be agent-specific?

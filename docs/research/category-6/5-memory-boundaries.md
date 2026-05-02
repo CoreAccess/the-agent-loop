@@ -176,7 +176,7 @@ The framework should explicitly budget for personal scope being always-loaded co
 
 ## Patterns to borrow for our framework
 
-1. **Project-local v1 memory.** TALL v1 is installed as a `.agent-loop` folder inside each project. A new project starts with a fresh `.agent-loop`; cross-project preference carryover is future CLI/shared-memory work.
+1. **Project-local v1 memory.** The Agent Loop v1 is installed as a `.agent-loop` folder inside each project. A new project starts with a fresh `.agent-loop`; cross-project preference carryover is future CLI/shared-memory work.
 
 2. **Project memory lives in the repo.** Project decisions, architecture, status, and conventions should live under the project-owned framework area and be versioned by git when git is present.
 

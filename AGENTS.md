@@ -9,7 +9,6 @@ Priority order when instructions conflict:
 1. Explicit user request in the current chat.
 2. This AGENTS.md file.
 3. Memory files (see Section 2 for path).
-4. `AGENTS-SAMPLE.md` as a reference implementation.
 
 ## 2. Context Loading
 
@@ -19,7 +18,6 @@ At the start of every session:
 2. Read `STATUS.md` — current project state and what to do next.
 3. Read `memory\project_framework_qa.md` — full decision record and session log.
 4. Read `BACKLOG.md` — open questions relevant to the next task.
-5. Read `AGENTS-SAMPLE.md` when working on agent contract or skill design.
 
 ## 3. Memory Discipline — Critical
 
@@ -47,17 +45,20 @@ When saving:
 
 ## 4. Current Phase
 
-**Phase: Category 2 complete — choosing next category**
+**Phase: The Agent Loop v0.1 Goal and filesystem organization**
 
 **What's been completed:**
 - Broad sweep research: all 12 links → `docs/research/broad-sweep.md`
 - Category 2 sub-category research: `docs/research/category-2/` (4 docs)
 - Category 2 re-grill: all Q1-Q9 answered, research docs updated, housekeeping done
+- Category 6 Memory Systems deep research, re-grill, docs update, and housekeeping
+- CMS incubator artifacts migrated into `experiments/` and `docs/case-studies/`
+- Public name simplified to `The Agent Loop`
+- v0.1 public loop wording decided: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`
 
 **Immediate next action:**
-- Choose next category for deep research
-- Recommendation: Category 6 — Memory Systems (feeds directly into preference learning and self-healing ideas flagged in the re-grill)
-- Note: Q6 (agent freedom + code cleanup) also needs dedicated research alongside Category 8 (Change Gates)
+- Review filesystem organization, naming conventions, and scaling hygiene before choosing the next research or experiment task.
+- Note: Q6 (agent freedom + code cleanup) still needs dedicated research alongside Category 8 (Change Gates)
 
 ## 5. Categories (v2 — post broad-sweep research)
 
@@ -78,21 +79,21 @@ When saving:
 
 ```
 /
-├── AGENTS.md                        # This file — behavior contract + process
+├── AGENTS.md                        # This file - behavior contract + process
 ├── STATUS.md                        # Current project state + session pickup
 ├── DECISIONS.md                     # Key decisions log (quick reference)
 ├── BACKLOG.md                       # Open questions + future work
-├── AGENTS-SAMPLE.md                 # Reference: FilmGap agent contract
+├── README.md                        # Public project overview
+├── .agent-loop/                     # Future framework install folder
+├── .agents/                         # Local agent skills/config, ignored
 ├── memory/
 │   ├── MEMORY.md                    # Memory index
 │   ├── project_framework_qa.md      # Full decision narrative + session log
-│   └── user_profile.md             # User working style
+│   └── user_profile.md              # User working style
 ├── docs/
+│   ├── case-studies/                # Applied lessons from experiments/incubators
 │   └── research/                    # Research notes per category
-│       ├── broad-sweep.md
-│       └── category-2/
-├── templates/                       # Framework templates (later phase)
-└── skills/                          # Agent skills (later phase)
+└── experiments/                     # Isolated experiment capsules
 ```
 
 ## 7. Change Gates

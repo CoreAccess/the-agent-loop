@@ -1,6 +1,6 @@
 # .agent-loop
 
-This folder is the future home for The Agent Learning Loop framework files in this repository.
+This folder is the future home for The Agent Loop framework files in this repository.
 
 Current purpose:
 
@@ -11,7 +11,7 @@ Current purpose:
 Memory direction:
 
 - The current `memory/` folder remains authoritative during this research phase.
-- Future TALL project memory is expected to live under `.agent-loop/memory/`.
+- Future Agent Loop project memory is expected to live under `.agent-loop/memory/`.
 - Do not migrate memory files until the broader framework folder structure is settled.
 
 Do not treat this as the final internal layout. Deeper structure will be decided after the relevant framework design work is complete.

@@ -1,14 +1,14 @@
 # Project Status
 
-Last updated: 2026-04-29
+Last updated: 2026-05-02
 
 ---
 
 ## Where We Are
 
-**Phase:** Category 6 complete - choosing next category  
-**Active category:** None; next recommended category is 8 - Change Gates & Guardrails  
-**Cycle step:** Closed for the night on 2026-04-29. Category 6 first-pass deep research, re-grill Q1-Q50, docs update, housekeeping, initial git commit, and GitHub push are complete. The framework is named `The Agent Learning Loop (TALL)`, with `The Agent Loop` as the short/spoken name.
+**Phase:** Reviewing filesystem organization  
+**Active category:** None; v0.1 Goal decisions are in progress before returning to category deep research.  
+**Cycle step:** CMS incubator artifacts have been migrated. The active project is The Agent Loop, and the v0.1 primary goal is a minimal tested project-local one-agent scaffold supported by Experiments 001-003. Public naming is now `The Agent Loop`; drop `The Agent Learning Loop` and `TALL` except as historical context.
 
 ---
 
@@ -45,45 +45,59 @@ Last updated: 2026-04-29
 - Captured out-of-cycle research note: `docs/research/future-goal-systems-and-decision-loops.md`.
 - Folded Gamble Lab / poker simulation lessons into the goal-systems research note: goals need constraints, tests should evaluate policy rather than only outcomes, and adaptation needs confidence thresholds.
 - Captured framework evaluation/testing as future research for Category 7 and related goal-systems work.
-- Chose the public framework name: `The Agent Learning Loop (TALL)`, short name `The Agent Loop`, repo slug `the-agent-loop`, preferred internal folder `.agent-loop`.
+- Historical naming note: previously chose `The Agent Learning Loop (TALL)`, short name `The Agent Loop`, repo slug `the-agent-loop`, preferred internal folder `.agent-loop`. Superseded on 2026-05-02 by public name `The Agent Loop`.
 - Added root `README.md` and `.gitignore` to start the repository identity and hygiene.
 - Ran a stale-path check for `AgentProjectFoundation`; no active stale paths were found. Remaining old-name references are historical/superseded decision-log entries.
 - Created `.agent-loop/README.md` as a placeholder to reserve the framework folder name without committing to the final internal layout.
 - Decided that always-loaded files should use soft size budgets with warnings, not hard caps or principle-only guidance.
 - Decided that Anthropic Contextual Retrieval should be documented as an advanced Anthropic-specific option, not a portable v1 default.
-- Decided that TALL should include an explicit just-in-time memory-loading instruction: start from index/status, load only task-relevant memory files, and broaden only when retrieval fails or the task needs more context.
+- Decided that The Agent Loop should include an explicit just-in-time memory-loading instruction: start from index/status, load only task-relevant memory files, and broaden only when retrieval fails or the task needs more context.
 - Decided that memory consolidation timing should be stage-based: Reflect/batch consolidation for markdown v1, foreground checks for high-impact writes in product-grade DB or managed memory backends.
 - Decided that project-local personalization should use two tiers in v1: always-loaded identity/style/workflow preferences relevant to the current project, with broader personal history loaded only when relevant.
 - Decided that ambiguous memory scope should use a project-local heuristic: generally reusable preference vs project-only fact; if uncertain or sensitive, ask during Reflect. Cross-project persistence is deferred.
 - Decided that stale/orphan memory cleanup should use health-check signals plus optional review windows as weak signals, never automatic expiration.
 - Decided that local MCP memory servers should be included as an optional advanced v1 graduation path, not an onboarding default.
 - Clarified the v1 personalization boundary: `.agent-loop` is project-local in v1, so personalization settings and taste adaptation do not automatically carry across projects. Cross-project behavior is deferred to future CLI/shared-memory work.
-- Decided that when memory becomes product data, TALL should recommend Postgres first, with `pgvector` as an optional retrieval index rather than the default memory backend.
+- Decided that when memory becomes product data, The Agent Loop should recommend Postgres first, with `pgvector` as an optional retrieval index rather than the default memory backend.
 - Decided that v1 should generate private-memory ignore defaults and added `.agent-loop/memory/private/` plus `*.private.md` to this repo's `.gitignore`.
 - Decided that v1 project-local personalization memories should use `scope: project` plus `kind: personalization`, rather than `scope: personal`.
 - Decided that the v1 schema should reserve `scope: team` as a future value while clearly marking team/shared memory as unsupported in v1.
-- Decided not to migrate current memory files into `.agent-loop` yet. Added a bridge note to `.agent-loop/README.md`: current `memory/` stays authoritative during research; future TALL project memory is expected under `.agent-loop/memory/`.
+- Decided not to migrate current memory files into `.agent-loop` yet. Added a bridge note to `.agent-loop/README.md`: current `memory/` stays authoritative during research; future Agent Loop project memory is expected under `.agent-loop/memory/`.
 - Clarified terminology: "dogfood" means applying your own product/framework to itself, but it is jargon. Use "apply the framework to itself" or "self-application" instead.
 - Updated all six Category 6 research docs with Q1-Q50 decisions, removed answered re-grill prompt sections, and corrected v1 project-local personalization drift.
 - Ran housekeeping: `.tmp` contained no files to clean up, stale old-name references are only historical/superseded entries, and `BACKLOG.md` now moves Category 8 to the top of the research queue.
 - Created the initial local git commit and pushed `main` to `https://github.com/CoreAccess/the-agent-loop.git`.
 - Closed the session for the night. Next pickup should start by confirming Category 8 or choosing a different next category.
+- Captured an out-of-cycle video research note from Brendan O'Leary's "Agentic Engineering" talk: `docs/research/agentic-engineering-brendan-oleary.md`. Treat it as supporting evidence only, not a core source of truth. The local root transcript was distilled into the note and removed during cleanup.
+- Removed local ignored root files `AGENTS-SAMPLE.md` and `transcript.md`; `.gitignore` keeps both ignored so they do not return accidentally.
+- Updated `AGENTS.md` so it no longer requires or lists `AGENTS-SAMPLE.md`.
+- Updated active terminology from `The Goal` to `Goal` and kept historical experiment titles/paths intact.
+- Deleted local `.claude/` and `.tmp/`.
+- Copied local project agent skill config from `.codex/` to `.agents/`; `.agents/skills/grill-me/` now exists.
+- Could not remove `.codex/` during this session because Windows reports access denied on files currently locked by Codex. User said they will delete `.codex/` manually before restart.
+- Updated `.gitignore` to ignore `.agents/*` while keeping `.claude/*` and `.codex/*` ignored as safeguards.
 
 ---
 
 ## Up Next
 
-1. At the next session, confirm whether to start Category 8 - Change Gates & Guardrails.
-2. If confirmed, update `STATUS.md` to active Category 8 / Step 1 and begin the deep-research cycle.
-3. Keep the framework evaluation/testing thread visible for Category 7; do not derail the next category unless the user explicitly chooses to switch.
+1. Decide and document a lightweight repository layout convention before moving files or starting the next major task.
+2. Recommended convention: root = control/pickup files; `docs/research/` = research by category plus out-of-cycle notes; `docs/case-studies/` = applied lessons; `experiments/` = isolated numbered capsules; `memory/` = authoritative research-phase memory; `.agent-loop/` = placeholder until v0.1 scaffold layout is chosen; `.agents/` = local ignored agent config.
+3. After the layout convention is confirmed, start Category 8 - Change Gates & Guardrails. It directly covers Q6: agent freedom, large rework stop rules, and code cleanup.
+4. Defer the clean unsafe-memory rerun or realistic Experiment 004 until Category 8 has produced enough guardrail guidance to test.
 
 ---
 
 ## Blockers / Open Decisions
 
-- Category 6 is complete and closed out. Awaiting next-category choice.
+- Category 6 is complete and closed out. v0.1 Goal decisions are now active before the next category choice.
 - GitHub remote is configured as `origin`; `main` tracks `origin/main`.
-- Public name: `The Agent Learning Loop (TALL)`. Short/spoken name: `The Agent Loop`. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`. Conflict check found no obvious exact-name ownership for the long form, but the component phrases are broad/common in agent architecture writing.
+- Public name: `The Agent Loop`. Drop `The Agent Learning Loop` and `TALL` except as historical context. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`.
+- v0.1 primary goal: minimal tested project-local one-agent scaffold supported by Experiments 001-003. Self-application is the operating method, not the v0.1 product surface.
+- v0.1 public loop wording: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
+- Goal artifact naming: use **Goal** in active/public framework language, not `Goal Packet` or `The Goal`. Historical experiment paths and titles may remain unchanged.
+- Filesystem organization is now under review before selecting the next implementation/research task.
+- Local agent folder convention: use `.agents/` for project-local agent skills/config. Restart check confirmed `.codex/`, `.claude/`, and `.tmp/` are absent; `.agents/` exists and remains ignored.
 - Q6 from Category 2 (agent freedom vs. guardrails + code cleanup) still needs dedicated research, likely alongside Category 8.
 - Category 13 (self-healing / preference learning) remains future scope.
 - Cross-project personalization is deferred. V1 `.agent-loop` is project-local; future CLI/shared-memory work may allow user preferences and learned tastes to carry across projects.
@@ -96,5 +110,32 @@ Last updated: 2026-04-29
 1. Read `AGENTS.md`.
 2. Read `memory/project_framework_qa.md`.
 3. Read this file for current state.
-4. Read the six docs in `docs/research/category-6/`.
-5. Confirm whether to start Category 8 - Change Gates & Guardrails. If yes, update this file to active Category 8 / Step 1 before researching.
+4. Read `docs/case-studies/cms-incubator.md`.
+5. Read `experiments/experiment-003-behavioral-obedience/evaluation/evaluator-review.md`.
+6. Continue defining The Agent Loop v0.1 Goal one decision at a time.
+
+## CMS Incubator Migration - 2026-05-02
+
+Curated artifacts from the separate `CMS` incubator workspace were migrated into this repo.
+
+Added:
+
+- `experiments/experiment-001-goal-packet/`
+- `experiments/experiment-002-memory-scaffold/`
+- `experiments/experiment-003-behavioral-obedience/`
+- `docs/case-studies/cms-incubator.md`
+
+Summary:
+
+- The CMS / website-factory idea is deferred as a future applied vertical.
+- The Agent Loop is now the focused project.
+- Experiments 001-3 each passed with independent score 20/21.
+- The main unresolved caveat is precise unsafe-memory testing; future fixtures should use redacted placeholders and keep unsafe strings only in task prompts.
+- Research should remain an explicit phase before major framework rules are promoted.
+
+Recommended pickup:
+
+1. Read `docs/case-studies/cms-incubator.md`.
+2. Read `experiments/experiment-003-behavioral-obedience/evaluation/evaluator-review.md`.
+3. Define The Agent Loop v0.1 Goal.
+4. Decide whether to run a clean unsafe-memory test or proceed to a realistic small-project Experiment 004.

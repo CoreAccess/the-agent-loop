@@ -2,7 +2,7 @@
 .gocache/
 .edge-profile/
 
-# TALL private memory
+# Agent Loop private memory
 .agent-loop/memory/private/
 *.private.md
 
@@ -13,8 +13,10 @@ build/
 .DS_Store
 Thumbs.db
 
-# Agent Specific Folders
+# Local agent-specific folders
+.agents/*
 .claude/*
 .codex/*
 
 AGENTS-SAMPLE.md
+transcript.md

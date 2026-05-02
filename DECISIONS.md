@@ -14,7 +14,13 @@ Quick reference for major decisions. Full narrative and rationale in `memory/pro
 | 2026-04-27 | Research output format | Per-category docs → master framework spec → Mintlify |
 | 2026-04-27 | Research approach | Broad sweep of all sources first, then deep per category |
 | 2026-04-28 | Public framework name | Superseded: `Agent Project Foundation`; reopened because spoken word flow was weak. |
-| 2026-04-29 | Public framework name | `The Agent Learning Loop (TALL)`; short/spoken name: `The Agent Loop`; repo slug: `the-agent-loop`; preferred internal folder: `.agent-loop`. |
+| 2026-04-29 | Public framework name | Superseded: `The Agent Learning Loop (TALL)`; short/spoken name was `The Agent Loop`. |
+| 2026-05-02 | Public framework name | `The Agent Loop`. Drop the `TALL` acronym and stop using `The Agent Learning Loop` except as historical context. Repo slug remains `the-agent-loop`; preferred internal folder remains `.agent-loop`. |
+| 2026-05-02 | v0.1 primary goal | Minimal tested scaffold: ship the smallest project-local one-agent scaffold supported by Experiments 001-003. Self-application remains the operating method, not the v0.1 product surface. |
+| 2026-05-02 | v0.1 loop shape | Accepted conceptually: Research first, then convert findings into a goal, do the work, record evidence, check results, reflect, and promote only what worked. Public terminology should be plain-language, with each step one or two words. `Research` is clear and should stay. |
+| 2026-05-02 | Goal artifact naming | Stop calling the goal artifact `Goal Packet` or `The Goal` in active/public framework language. Refer to it as **Goal**. Historical experiment paths and titles may remain unchanged. |
+| 2026-05-02 | v0.1 public loop wording | `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`. |
+| 2026-05-02 | Local agent folder | Use `.agents/` for local project agent skills/config instead of `.codex/`. Keep local agent folders ignored. |
 | 2026-04-29 | Framework folder bootstrap | Create only `.agent-loop/README.md` now to reserve the folder name; defer deeper internal structure until the structure design is settled. |
 
 ## Categories
@@ -64,4 +70,4 @@ Quick reference for major decisions. Full narrative and rationale in `memory/pro
 | 2026-04-29 | Private memory ignore defaults | Generate ignore defaults for private memory: `.agent-loop/memory/private/` and `*.private.md`. Secrets, credentials, and PII still do not belong in memory. |
 | 2026-04-29 | Project-local personalization schema | In v1, personalization memories use `scope: project` plus `kind: personalization`, not `scope: personal`, because `.agent-loop` is project-local. |
 | 2026-04-29 | Team scope schema hook | Reserve `scope: team` as a future schema value, but clearly mark team/shared memory as unsupported in v1. |
-| 2026-04-29 | Memory migration bridge | Keep current `memory/` authoritative during research. Add a note that future TALL project memory is expected under `.agent-loop/memory/`; defer migration until structure is settled. |
+| 2026-04-29 | Memory migration bridge | Keep current `memory/` authoritative during research. Add a note that future Agent Loop project memory is expected under `.agent-loop/memory/`; defer migration until structure is settled. |

@@ -391,7 +391,7 @@ That preserves human control and avoids the trap where the most valuable artifac
 9. Add only `supersedes` as a v1 graph-style hook; defer broad `related` fields.
 10. Every recommended backend must export to plain Markdown or JSON.
 11. Strongly recommend git for memory auditability, but do not hard-block quick/local experiments.
-12. For this project, keep current `memory/` authoritative during research and add only a bridge note that future TALL memory is expected under `.agent-loop/memory/`.
+12. For this project, keep current `memory/` authoritative during research and add only a bridge note that future Agent Loop memory is expected under `.agent-loop/memory/`.
 
 ---
 

@@ -111,7 +111,7 @@ Sources:
 
 ## Framework Implications
 
-### 1. Add a Goal Packet
+### 1. Add Goal
 
 Every meaningful task should be reducible to a small goal packet:
 

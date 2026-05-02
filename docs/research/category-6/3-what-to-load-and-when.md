@@ -167,7 +167,7 @@ For a single-project memory of <100 entries with descriptive filenames, this is 
 4. Always-loaded files use soft size budgets with warnings, not hard caps.
 5. Retrieval graduation uses rough numeric thresholds for orientation, but retrieval failure and maintenance burden are the real triggers.
 6. Recency is a tie-breaker after status/authority, relevance, and source quality.
-7. Anthropic Contextual Retrieval is an advanced Anthropic-specific option, not TALL's portable v1 default.
+7. Anthropic Contextual Retrieval is an advanced Anthropic-specific option, not The Agent Loop's portable v1 default.
 8. Root agent instructions should explicitly say to start from index/status, load only task-relevant memory, and broaden only when retrieval fails or the task needs more context.
 
 ---

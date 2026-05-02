@@ -74,6 +74,31 @@ Date established: 2026-04-27
 - Caveat: links are not perfect, some may be irrelevant — apply judgment
 - spec-kit (https://github.com/github/spec-kit) is the priority link — it is the closest competitor and may already cover ground we plan to build
 
+### Public name simplification (decided 2026-05-02)
+- Public-facing name going forward is **The Agent Loop**.
+- Drop the `TALL` acronym and stop calling the project `The Agent Learning Loop`, except when preserving historical context.
+- Repo slug remains `the-agent-loop`; preferred internal framework folder remains `.agent-loop`.
+
+### The Agent Loop v0.1 primary goal (decided 2026-05-02)
+- v0.1 should focus on a **minimal tested scaffold**: the smallest project-local one-agent scaffold supported by Experiments 001-003.
+- Self-application remains the operating method for building the project, but it is not the v0.1 product surface.
+- Open Goal decisions remain: lifecycle wording with explicit Research phase, exact v0.1 artifact list, next validation experiment, and rule-promotion evidence threshold.
+
+### The Agent Loop v0.1 loop shape (decided 2026-05-02)
+- Conceptual loop accepted: Research first, then convert findings into a goal, do the work, record evidence, check results, reflect, and promote only what worked.
+- `Research` is clear and should stay as the first phase.
+- Public loop wording should be plain-language, and each step should be one or two words.
+- The other terms from the draft loop (`Distill`, `Goal Packet`, `Execute`, `Trace`, `Evaluate`, `Promote`) need clearer public wording before they are finalized.
+
+### Goal terminology (decided 2026-05-02)
+- Stop calling the goal artifact `Goal Packet` in active and public framework language.
+- Refer to the artifact as **Goal**; do not make "The" part of the formal term.
+- Historical experiment paths, filenames, and titles may remain unchanged where changing them would obscure artifact provenance.
+
+### v0.1 public loop wording (decided 2026-05-02)
+- Final v0.1 public loop wording: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
+- Rationale: the wording is plain-language, compact, and keeps each step to one or two words while preserving the accepted loop shape.
+
 ## Resolved Questions
 
 - **Categories 1 vs 8:** Keep separate. Research confirms: agent identity/contract (Codified Rules) and enforcement/guardrails (Security Sandbox, Policy Generation) are architecturally distinct. They coexist in AGENTS.md today but are separate design concerns.
@@ -177,7 +202,7 @@ Date established: 2026-04-27
 - **Personal + project scope chosen for v1.** Personal preferences and working style live in user-scoped memory. Project decisions, architecture, status, and conventions live in repo-scoped memory.
 - Team/shared memory is real but deferred to v2 because it requires access control, conflict handling, and shared infrastructure.
 - Rationale: personal preferences should not have to be re-taught for every project, while project memory should travel with the code and be versioned.
-- **Superseded/refined on 2026-04-29:** v1 is project-local because TALL is installed as a `.agent-loop` folder per project. Project-local personalization remains in scope; automatic cross-project preference carryover is deferred.
+- **Superseded/refined on 2026-04-29:** v1 is project-local because The Agent Loop is installed as a `.agent-loop` folder per project. Project-local personalization remains in scope; automatic cross-project preference carryover is deferred.
 
 ### Team scope schema hook (decided 2026-04-29)
 - **Reserve `scope: team` now.** The schema may allow `scope: team` as a future value so team/shared memory can be added later without renaming the field.
@@ -188,11 +213,11 @@ Date established: 2026-04-27
 - **Split location chosen with a privacy escape hatch.** Personal memory lives in user space and is not committed. Project memory lives in the repo and is committed/versioned by default.
 - Private or sensitive project memory is allowed but must be explicitly marked untracked or stored outside the repo.
 - Rationale: project memory should travel with the code and use git as its audit trail, but the framework should not pretend every project memory is safe to commit.
-- **Superseded/refined on 2026-04-29:** v1 cannot depend on user-space cross-project memory because TALL is installed as a project-local `.agent-loop` folder. Project-local personalization is in scope for v1; true cross-project personalization is deferred.
+- **Superseded/refined on 2026-04-29:** v1 cannot depend on user-space cross-project memory because The Agent Loop is installed as a project-local `.agent-loop` folder. Project-local personalization is in scope for v1; true cross-project personalization is deferred.
 
 ### V1 project-local personalization boundary (decided 2026-04-29)
 - **Project-local v1 boundary chosen.** In v1, a user starts a project or adopts an existing project by adding a `.agent-loop` folder to that specific project.
-- A new project starts with a fresh `.agent-loop`; TALL v1 has no reliable mechanism to know or carry cross-project behavior, preferences, or taste adaptation.
+- A new project starts with a fresh `.agent-loop`; The Agent Loop v1 has no reliable mechanism to know or carry cross-project behavior, preferences, or taste adaptation.
 - Personalization settings can exist inside the current project's `.agent-loop`, but they should be understood as project-local personalization unless the user manually copies them.
 - Cross-project personalization is deferred to future CLI/shared-memory work, where a user-space store or managed setup could make stable preferences portable.
 - Rationale: the framework should not promise behavior it cannot implement in v1. Project-local setup is simpler, honest, and matches the launch mechanism.
@@ -281,7 +306,7 @@ Date established: 2026-04-27
 
 ### Source-specific retrieval optimizations (decided 2026-04-29)
 - **Advanced provider-specific option chosen.** Anthropic Contextual Retrieval should be documented as a useful graduation path for Claude/Anthropic-heavy projects, not recommended as the portable v1 default.
-- TALL's default retrieval guidance should remain cross-agent: index-driven just-in-time loading, keyword search for exact terms, and backend graduation based on retrieval pain.
+- The Agent Loop's default retrieval guidance should remain cross-agent: index-driven just-in-time loading, keyword search for exact terms, and backend graduation based on retrieval pain.
 - Rationale: Anthropic Contextual Retrieval has strong evidence, but the framework should not couple its default memory model to one provider's technique. Agent-specific optimizations are acceptable when clearly labeled.
 
 ### Storage backend ladder (decided 2026-04-28)
@@ -290,13 +315,13 @@ Date established: 2026-04-27
 - Rationale: the framework should start with portable, inspectable, versionable memory and graduate only when real pain appears.
 
 ### Product-grade memory backend (decided 2026-04-29)
-- **Postgres-first recommendation chosen.** When memory becomes product data, TALL should recommend Postgres as the serious default backend.
+- **Postgres-first recommendation chosen.** When memory becomes product data, The Agent Loop should recommend Postgres as the serious default backend.
 - `pgvector` should be positioned as an optional retrieval index inside Postgres, not as the core memory model.
 - Standalone vector databases should be recommended for large unstructured semantic corpora or proven semantic-retrieval pain, not ordinary structured preferences, decisions, source stamps, status, audit, and access-control needs.
 - Rationale: product memory usually needs transactions, metadata filtering, auth, audit, backups, joins, and operational maturity. Vector search is useful, but it is one index over the durable record.
 
 ### Local MCP memory bridge (decided 2026-04-29)
-- **Optional advanced v1 path chosen.** TALL should mention local MCP memory servers as a graduation path for users who need shared local recall across Codex, Claude Code, Gemini, Cursor, or similar agents.
+- **Optional advanced v1 path chosen.** The Agent Loop should mention local MCP memory servers as a graduation path for users who need shared local recall across Codex, Claude Code, Gemini, Cursor, or similar agents.
 - Local MCP memory should not be part of default onboarding.
 - Rationale: it is a practical bridge between repo markdown and product-grade database memory, but it adds enough tooling complexity that it should remain opt-in.
 
@@ -390,7 +415,7 @@ Date established: 2026-04-27
 - Rationale: a private folder is clear for humans, while a private filename suffix helps when private memory belongs near related public memory.
 
 ### Private memory ignore defaults (decided 2026-04-29)
-- **Generate ignore defaults in v1.** TALL should add ignore patterns for `.agent-loop/memory/private/` and `*.private.md`.
+- **Generate ignore defaults in v1.** The Agent Loop should add ignore patterns for `.agent-loop/memory/private/` and `*.private.md`.
 - These defaults should be created during bootstrap so private project memory is not accidentally committed.
 - Secrets, credentials, API keys, tokens, and PII still do not belong in memory at all.
 - Rationale: the private-folder and private-suffix convention only works if the generated repo hygiene matches it by default.
@@ -414,14 +439,14 @@ Date established: 2026-04-27
 
 ### Memory migration bridge (decided 2026-04-29)
 - **Minimal bridge chosen.** Keep the current root `memory/` folder authoritative during this research phase.
-- Add a note to `.agent-loop/README.md` that future TALL project memory is expected to live under `.agent-loop/memory/`.
+- Add a note to `.agent-loop/README.md` that future Agent Loop project memory is expected to live under `.agent-loop/memory/`.
 - Do not migrate memory files until the broader framework folder structure is settled.
 - Rationale: this captures the direction without moving core memory files before structure work is complete.
 
 ### Plain language for self-application (decided 2026-04-29)
 - Avoid using "dogfood" or "dogfooding" in user-facing framework language.
-- Use plain wording such as "apply the framework to itself," "use TALL on this project," or "self-application."
-- Rationale: "dogfood" is common engineering shorthand for using your own product, but it is jargon and conflicts with TALL's plain-language principle.
+- Use plain wording such as "apply the framework to itself," "use The Agent Loop on this project," or "self-application."
+- Rationale: "dogfood" is common engineering shorthand for using your own product, but it is jargon and conflicts with The Agent Loop's plain-language principle.
 
 ### Framework naming research (opened 2026-04-28)
 - User wants to choose a memorable framework name now before locking folder names or public repo framing.
@@ -624,10 +649,10 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Q32 decided: memory filenames should use loose descriptive naming: stable, human-readable kebab-case or snake_case topic names, without mandatory type/scope prefixes.
 - Q33 decided: use both a standard ignored private memory folder and private filename suffix; private memory is not for secrets/credentials/PII.
 - Q34 decided: use one dedicated framework folder plus minimal root adapter files for agent discovery. Folder name remains blocked on framework naming.
-- Q35 decided: final name is `The Agent Learning Loop (TALL)`, short/spoken name `The Agent Loop`, repo slug `the-agent-loop`, and preferred internal folder `.agent-loop`.
+- Q35 originally decided: final name was `The Agent Learning Loop (TALL)`, short/spoken name `The Agent Loop`, repo slug `the-agent-loop`, and preferred internal folder `.agent-loop`. Superseded on 2026-05-02 by public name `The Agent Loop`.
 - Q36 decided: create only `.agent-loop/README.md` now as a placeholder; defer deeper internal structure until structure design is settled.
 - Q37 decided: always-loaded files use soft size budgets with warnings; agents should suggest moving detail into skills, docs, or archival memory when files grow too large.
-- Q38 decided: document Anthropic Contextual Retrieval as an advanced Anthropic-specific option, not as TALL's portable v1 retrieval default.
+- Q38 decided: document Anthropic Contextual Retrieval as an advanced Anthropic-specific option, not as The Agent Loop's portable v1 retrieval default.
 - Q39 decided: root agent instructions should explicitly enforce JIT memory loading as default behavior with judgment: start from index/status, load task-relevant memory, broaden only when needed.
 - Q40 decided: use stage-based memory consolidation timing: markdown v1 consolidates during Reflect/batch lint; product-grade DB or managed memory may use foreground checks for high-impact writes.
 - Q41 decided: project-local personalization uses two tiers in v1: always-loaded identity/style/workflow preferences relevant to the current project, and conditional personal history/life facts loaded only when relevant.
@@ -639,7 +664,7 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Q47 decided: v1 should generate private-memory ignore defaults: `.agent-loop/memory/private/` and `*.private.md`; secrets, credentials, and PII are still rejected from memory entirely.
 - Q48 decided: v1 project-local personalization memories should use `scope: project` plus `kind: personalization`, not `scope: personal`; `type` remains reserved for the memory taxonomy.
 - Q49 decided: reserve `scope: team` as a future schema value, while clearly marking team/shared memory as unsupported in v1.
-- Q50 decided: keep current `memory/` authoritative during research, add a bridge note that future TALL memory is expected under `.agent-loop/memory/`, and defer migration until structure is settled.
+- Q50 decided: keep current `memory/` authoritative during research, add a bridge note that future Agent Loop memory is expected under `.agent-loop/memory/`, and defer migration until structure is settled.
 
 ### Framework naming rare-name pass (logged 2026-04-28)
 - User rejected `Anne` / `ANNE` and clarified that acronym expansions must sound logical and cool, not merely match letters.
@@ -807,3 +832,51 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - Rewrote git history to remove `AGENTS-SAMPLE.md` from every reachable commit, deleted local filter-branch backup refs, expired reflogs, ran garbage collection, and force-pushed cleaned `main` to GitHub.
 - Verification showed no reachable commits or objects listing `AGENTS-SAMPLE.md`; remote `main` moved to cleaned commit `e1c0453`.
 - Secret-pattern scans found only documentation text about secrets/tokens, not actual credential values, so there was nothing concrete to rotate from the exposed file.
+
+### Agentic Engineering Transcript (logged 2026-04-29)
+- User supplied the transcript for Brendan O'Leary's YouTube video "Agentic Engineering" as `transcript.md` in the project root.
+- This serves as external reference material for AI-assisted workflows, context engineering, and the agentic engineering paradigm.
+- Added `transcript.md` to `.gitignore` so the local transcript can remain available without being committed accidentally.
+
+### Agentic Engineering research note captured (logged 2026-04-29)
+- Created `docs/research/agentic-engineering-brendan-oleary.md` as an out-of-cycle research note.
+- Treat the talk as supporting evidence only, not core truth or a framework decision source by itself.
+- Main evidence threads captured: AI agents as junior-engineer-like collaborators, context engineering discipline, research-plan-implement workflow, AGENTS.md vs skills separation, permission tuning, MCP/tool context overhead, and PR-like review of agent work.
+- Carry the note into Category 8 (guardrails/permissions), Category 9 (context loading), Category 5 (skills), Category 7 (verification), Category 11 (agentic patterns), and Category 12 (observable development).
+
+### CMS incubator migration and v0.1 Goal started (logged 2026-05-02)
+- User clarified that the CMS project should not continue; the CMS workspace is now only an incubator case study and possible future applied vertical.
+- The Agent Loop is the focused project.
+- User confirmed two v0.1 decisions: public name is `The Agent Loop` only, dropping `The Agent Learning Loop` and `TALL`; v0.1 primary goal is a minimal tested project-local one-agent scaffold supported by Experiments 001-003.
+- Explicit Research must remain in the framework loop before major decisions are promoted. Research includes prior art, competing tools, GitHub discussions, docs, forums, developer pain, and adjacent fields when useful.
+- User agreed with the v0.1 loop shape but said the terminology needs to be much clearer; `Research` can stay, and each public step name should be one or two words.
+- User then clarified that active framework language should stop saying `Goal Packet` and should refer to the artifact as **Goal**, not **The Goal**.
+- User accepted final v0.1 public loop wording: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
+- User paused next-task selection to review project filesystem organization, naming conventions, and scaling hygiene. They specifically raised deleting local `AGENTS-SAMPLE.md` and `transcript.md`, and noted file growth/context bloat as a concern that should be addressed but may not be the immediate top priority.
+- Updated `STATUS.md`, `DECISIONS.md`, `BACKLOG.md`, `README.md`, `.agent-loop/README.md`, and this memory file for active naming and v0.1 decision state.
+- Next action: inspect and recommend project filesystem organization before selecting the next implementation/research task.
+
+### Root cleanup and Goal terminology correction (logged 2026-05-02)
+- User clarified that the formal artifact term should be `Goal`, not `The Goal`, because "The Goal step" sounds unnatural.
+- Updated active references and the v0.1 public loop wording to `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
+- Deleted local ignored root files `AGENTS-SAMPLE.md` and `transcript.md`.
+- Kept `.gitignore` entries for both files to prevent accidental reintroduction.
+- Updated `AGENTS.md` so it no longer requires or lists `AGENTS-SAMPLE.md`.
+- Updated the Agentic Engineering note to say the transcript was distilled into the note and removed.
+- Left historical experiment names and paths intact, including `experiment-001-goal-packet`, because those preserve artifact provenance.
+
+### Local agent folder cleanup before Codex restart (logged 2026-05-02)
+- User requested deleting `.claude/` and `.tmp/`, renaming `.codex/` to `.agents/`, and saving state before restarting Codex.
+- Deleted `.claude/` and `.tmp/`.
+- Copied `.codex/` to `.agents/`; `.agents/skills/grill-me/SKILL.md` and `.agents/skills/grill-me/agents/openai.yaml` exist.
+- Windows denied removal of `.codex/` because current Codex session files under `.codex/skills/grill-me/` are locked. User said they will delete `.codex/` manually before restart.
+- Updated `.gitignore` to ignore `.agents/*`, while keeping `.claude/*` and `.codex/*` ignored as safeguards.
+- Updated `AGENTS.md`, `DECISIONS.md`, `STATUS.md`, and this memory file so a fresh session can pick up the filesystem review.
+
+### Filesystem review pickup and next-task recommendation (logged 2026-05-02)
+- Loaded the required session context plus the CMS incubator case study and Experiment 003 evaluator review.
+- Verified `.codex/`, `.claude/`, and `.tmp/` are absent after restart; `.agents/` exists locally and remains ignored.
+- Current repo shape is coherent: root control files, `docs/research/`, `docs/case-studies/`, isolated `experiments/` capsules, authoritative research memory in `memory/`, and `.agent-loop/` as a placeholder only.
+- Naming drift looks controlled: active docs use `The Agent Loop` and `Goal`; old `Goal Packet` / `goal-packet` names remain in historical experiment artifacts where provenance matters.
+- Scaling risk to watch: `memory/project_framework_qa.md` is now about 90 KB / 717 lines, and experiments are the largest content area at about 316 KB across 93 files. Keep startup files short and rely on indexes plus just-in-time loading.
+- Recommended next action: make one lightweight repository layout convention decision and document it, without bulk moves. Then start Category 8 - Change Gates & Guardrails because it directly covers Q6, agent freedom, large rework stop rules, and code cleanup.

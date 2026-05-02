@@ -1,4 +1,4 @@
-# The Agent Learning Loop (TALL)
+# The Agent Loop
 
 The Agent Loop is a research-backed framework for helping AI coding agents work with clearer goals, better memory, tighter feedback loops, and stronger human control.
 
@@ -16,7 +16,7 @@ AI coding agents perform better when their work is organized as a loop:
 6. Reflect on what happened.
 7. Preserve useful learning for future work.
 
-TALL turns that loop into a repeatable project framework: agent instructions, onboarding, memory rules, verification gates, reusable skills, and documentation.
+The Agent Loop turns that loop into a repeatable project framework: agent instructions, onboarding, memory rules, verification gates, reusable skills, and documentation.
 
 ## Planned Outputs
 
@@ -28,14 +28,13 @@ TALL turns that loop into a repeatable project framework: agent instructions, on
 
 ## Current Status
 
-The project is still in research. Category 2, Project Bootstrap and Onboarding, is complete. Category 6, Memory Systems, is in progress.
+The project is still in research. Category 2, Project Bootstrap and Onboarding, and Category 6, Memory Systems, are complete. Current work is reviewing filesystem organization before the next v0.1 task.
 
 See `STATUS.md` for the current pickup point and `memory/project_framework_qa.md` for the detailed decision record.
 
 ## Name
 
-- Full name: The Agent Learning Loop
-- Short name: The Agent Loop
-- Acronym: TALL
+- Public name: The Agent Loop
+- Former name: The Agent Learning Loop / TALL, retained only as historical context
 - Suggested repo slug: `the-agent-loop`
 - Preferred internal framework folder: `.agent-loop`
