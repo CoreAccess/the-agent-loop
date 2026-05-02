@@ -11,16 +11,15 @@ Priority order is a recommendation — user decides at each cycle.
 
 | Priority | Category | Notes |
 |----------|----------|-------|
-| 1 | **8 — Change Gates & Guardrails** | Needed alongside Q6 research (agent freedom + code cleanup) |
-| 2 | **1 — Agent Contract** | AGENTS.md / CLAUDE.md design — foundational |
-| 3 | **3 — Planning & Architecture Docs** | ADRs, STATUS, DECISIONS, BACKLOG — we're building these now |
-| 4 | **5 — Skills & Reusable Capabilities** | Cross-agent portability question lives here |
-| 5 | **4 — Spec-Driven Development** | spec-kit is reference; we own this category |
-| 6 | **7 — Testing & Verification Loops** | LLM-as-judge, quality gates, framework evaluation for goal pursuit/adaptability |
-| 7 | **9 — Context Loading & Management** | Narrow loading, scoped skills |
-| 8 | **10 — Error Handling & Recovery** | Recovery loops, error logs |
-| 9 | **11 — Agentic Patterns** | ReAct, Reflection, HITL — multi-agent is v2 |
-| 10 | **12 — Observable Development** | Proactive visibility, progress logs |
+| 1 | **1 — Agent Contract** | AGENTS.md / CLAUDE.md design — foundational |
+| 2 | **3 — Planning & Architecture Docs** | ADRs, STATUS, DECISIONS, BACKLOG — we're building these now |
+| 3 | **5 — Skills & Reusable Capabilities** | Cross-agent portability question lives here |
+| 4 | **4 — Spec-Driven Development** | spec-kit is reference; we own this category |
+| 5 | **7 — Testing & Verification Loops** | LLM-as-judge, quality gates, framework evaluation for goal pursuit/adaptability |
+| 6 | **9 — Context Loading & Management** | Narrow loading, scoped skills |
+| 7 | **10 — Error Handling & Recovery** | Recovery loops, error logs |
+| 8 | **11 — Agentic Patterns** | ReAct, Reflection, HITL — multi-agent is v2 |
+| 9 | **12 — Observable Development** | Proactive visibility, progress logs |
 
 ---
 
@@ -35,7 +34,7 @@ Priority order is a recommendation — user decides at each cycle.
 - How does the constitution evolve when a project changes direction (pivot)?
 - Version history: in the constitution itself, or does git handle it?
 - What does a constitution look like for an existing project with architecture already baked in?
-- Right granularity for complexity ceilings in CONTRACT.md — needs dedicated research (see Q6 below)
+- How should Category 8 guardrail decisions be integrated into the generated AGENTS.md / Goal / STATUS scaffold?
 
 **2.3 — Bootstrap Generation**
 - Exact file content for each generated artifact (Go web app vs Python data pipeline vs React SPA)
@@ -51,12 +50,19 @@ Priority order is a recommendation — user decides at each cycle.
 
 ## Open Questions — Framework-Wide
 
-- **Q6 — Agent freedom vs. guardrails:** What specifically counts as a "large rework" that warrants stopping to ask? Research needed. Initial position: full autonomy inside codebase; only stop for very large reworks or significant refactors.
-- **Agent code cleanup:** How do we enforce the cleanup mandate in practice? What patterns/prompts reliably make agents remove dead code?
+- **v0.1 scaffold validation:** Initial release-source draft exists under `releases/v0.1/.agent-loop/`. Next, test blank-project and existing-project flows by copying only `.agent-loop/` into the project and running the README starter prompt.
+- **README prototype clarity:** Current README distinguishes research repo vs scaffold-only release ZIP direction. Once the release asset exists, replace placeholder command shape with the final GitHub Releases download link and exact install wording.
+- **Distribution mechanism:** v0.1 should use a GitHub Release ZIP containing only `.agent-loop/`. Separate starter repo, scaffold branch/tag, root instruction integration, and prompt file are deferred unless validation proves the README prompt flow is not enough.
 - **Framework evaluation/testing:** How do we test The Agent Loop itself for goal pursuit, adaptability, stop-rule obedience, signal-vs-noise discipline, and real-world usefulness inside Codex?
 - **File system structure:** How should the framework's own directory structure be organized as it grows?
 - **Category 11 scope:** Which agentic patterns (ReAct, Reflection, HITL, Planning) are core v1 vs v2?
 - **Cross-agent portability (Category 5):** How much of each skill can be shared across Claude/Gemini/Codex vs. must be agent-specific?
+
+---
+
+## Candidate Sources To Revisit
+
+- **Category 5 / Category 8 overlap:** Search Engine Land, "How to build SEO agent skills that actually work" (Itay Malinski, 2026-05-01): useful for skills as workspaces, explicit tools, references, memory, templates, progressive disclosure, review layers, sandbox testing, and tool-boundary guardrails. URL: https://searchengineland.com/build-seo-agent-skills-476252
 
 ---
 

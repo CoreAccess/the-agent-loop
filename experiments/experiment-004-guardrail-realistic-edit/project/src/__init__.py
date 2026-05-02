@@ -1,0 +1,2 @@
+"""Notekeeper package."""
+

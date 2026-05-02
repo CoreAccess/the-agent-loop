@@ -84,7 +84,9 @@ When saving:
 ├── DECISIONS.md                     # Key decisions log (quick reference)
 ├── BACKLOG.md                       # Open questions + future work
 ├── README.md                        # Public project overview
-├── .agent-loop/                     # Future framework install folder
+├── releases/                        # Release package source folders
+│   └── v0.1/
+│       └── .agent-loop/             # v0.1 folder users copy into projects
 ├── .agents/                         # Local agent skills/config, ignored
 ├── memory/
 │   ├── MEMORY.md                    # Memory index

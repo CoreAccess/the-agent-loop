@@ -6,9 +6,9 @@ Last updated: 2026-05-02
 
 ## Where We Are
 
-**Phase:** Reviewing filesystem organization  
-**Active category:** None; v0.1 Goal decisions are in progress before returning to category deep research.  
-**Cycle step:** CMS incubator artifacts have been migrated. The active project is The Agent Loop, and the v0.1 primary goal is a minimal tested project-local one-agent scaffold supported by Experiments 001-003. Public naming is now `The Agent Loop`; drop `The Agent Learning Loop` and `TALL` except as historical context.
+**Phase:** v0.1 release ZIP and README starter prompt model refined  
+**Active category:** None; Category 8 - Change Gates & Guardrails is complete.  
+**Cycle step:** Initial v0.1 release-source layout now lives at `releases/v0.1/.agent-loop/` and targets a GitHub Release ZIP containing only `.agent-loop/`, with GitHub README install steps and a short starter prompt. Next step is scaffold validation for blank and existing projects.
 
 ---
 
@@ -23,7 +23,7 @@ Last updated: 2026-05-02
 | 5 - Skills & Reusable Capabilities | Done | Pending | Pending | Pending |
 | 6 - Memory Systems | Done | Done | Done | Done |
 | 7 - Testing & Verification Loops | Done | Pending | Pending | Pending |
-| 8 - Change Gates & Guardrails | Done | Pending | Pending | Pending |
+| 8 - Change Gates & Guardrails | Done | Done | Done | Done |
 | 9 - Context Loading & Management | Done | Pending | Pending | Pending |
 | 10 - Error Handling & Recovery | Done | Pending | Pending | Pending |
 | 11 - Agentic Patterns | Done | Pending | Pending | Pending |
@@ -33,6 +33,43 @@ Last updated: 2026-05-02
 
 ## Completed In This Pickup
 
+- Confirmed Category 8 - Change Gates & Guardrails as the next active research category.
+- Reviewed Search Engine Land's May 1, 2026 article "How to build SEO agent skills that actually work" and flagged it as a future Category 5 source with Category 8 overlap.
+- Completed first-pass Category 8 deep research and created an index plus five research docs:
+  - `docs/research/category-8/README.md`
+  - `docs/research/category-8/1-permission-models-and-autonomy.md`
+  - `docs/research/category-8/2-high-impact-actions-and-stop-rules.md`
+  - `docs/research/category-8/3-change-size-refactors-and-cleanup.md`
+  - `docs/research/category-8/4-sandboxing-rollback-and-external-access.md`
+  - `docs/research/category-8/5-developer-pain-and-reference-implementations.md`
+- Completed Category 8 re-grill Q1-Q9.
+- Updated Category 8 docs with re-grill decisions and removed answered question framing.
+- Created `experiments/experiment-004-guardrail-realistic-edit/`.
+- Experiment 004 tests a realistic local Python project edit with Local Build autonomy, cleanup/deletion discipline, stop rules, checkpoint/sandbox expectations, verification, and Reflect.
+- Seed baseline tests pass: `uv run python -m unittest discover -s tests` from the experiment `project/` ran 4 tests successfully.
+- Evaluated returned Experiment 004 actor run and wrote `experiments/experiment-004-guardrail-realistic-edit/evaluation/evaluator-review.md`.
+- Experiment 004 result: 23/24 strong pass. Only material deduction: actor did not explicitly record a git status/checkpoint check before editing.
+- Independent verification passed: `uv run python -m unittest discover -s tests` from the experiment `project/` ran 4 tests successfully.
+- User approved cleanup of generated Experiment 004 `__pycache__/` files; removed them after verifying resolved paths were inside the workspace.
+- Added `docs/research/category-8/6-v0.1-guardrail-adoption.md`.
+- Adopted Category 8 guardrails for v0.1 scaffold design, with tightened wording requiring actors to record git/dirty state and checkpoint status before significant edits.
+- Created `.agent-loop/scaffold/v0.1/` as the first product-shaped v0.1 scaffold draft.
+- Added source templates for `AGENTS.md`, `STATUS.md`, `GOAL.md`, `MEMORY.md`, `memory/active/`, `memory/proposed/`, `memory/log.md`, `memory/decisions.md`, `templates/atomic-memory.md`, `templates/goal.md`, and `templates/reflect-checklist.md`.
+- Updated `.agent-loop/README.md` to point to the v0.1 scaffold draft.
+- Decided the current research repo should not be the user install surface.
+- Refined distribution direction: use a scaffold-only release ZIP for v0.1; do not create a separate starter repo for now.
+- Removed `.agent-loop/scaffold/v0.1/templates/START_HERE.md`; startup must not depend on an installed prompt file.
+- Refined startup model: the GitHub README starter prompt loads `.agent-loop/AGENTS.md`, which starts onboarding when `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md` are blank or uninitialized.
+- Strengthened existing-project adoption behavior: inspect repo first, detect existing stack/docs/tests/instructions, avoid overwrites, summarize conflicts, ask only blocking setup questions, then draft `GOAL.md` / `STATUS.md` for review.
+- Reworked the v0.1 scaffold source so installed framework internals live under project `.agent-loop/`, not root `memory/`, root `templates/`, or root framework docs.
+- Refined the release model again: v0.1 ZIP should contain only `.agent-loop/`.
+- Removed root adapter source files from the v0.1 release-source draft.
+- Decided the GitHub README should provide the starter prompt that tells the agent to read `.agent-loop/AGENTS.md`; no `START_HERE.md`, prompt file, root `README.md`, or root `AGENTS.md` should be installed by default.
+- Clarified that users should download an uploaded GitHub Release asset, not GitHub's automatic source-code ZIP.
+- Decided the scaffold should not install a root project `README.md`, because existing projects almost certainly already own that file.
+- Moved the v0.1 release package source from `.agent-loop/scaffold/v0.1/release-source/core/.agent-loop/` to `releases/v0.1/.agent-loop/`.
+- Removed the obsolete root `.agent-loop/` scaffold wrapper.
+- Updated root `README.md` to describe the public v0.1 workflow: download the GitHub Release ZIP asset, extract it, copy `.agent-loop/` into a new or existing project, open a coding agent, and run the starter prompt.
 - Resumed after the prior model stopped mid-Category 6 due to a rate limit.
 - Loaded `AGENTS.md`, `STATUS.md`, `memory/project_framework_qa.md`, `BACKLOG.md`, `memory/MEMORY.md`, `memory/user_profile.md`, and existing Category 6 docs.
 - Confirmed five Category 6 docs already existed and were first-pass complete:
@@ -81,16 +118,17 @@ Last updated: 2026-05-02
 
 ## Up Next
 
-1. Decide and document a lightweight repository layout convention before moving files or starting the next major task.
-2. Recommended convention: root = control/pickup files; `docs/research/` = research by category plus out-of-cycle notes; `docs/case-studies/` = applied lessons; `experiments/` = isolated numbered capsules; `memory/` = authoritative research-phase memory; `.agent-loop/` = placeholder until v0.1 scaffold layout is chosen; `.agents/` = local ignored agent config.
-3. After the layout convention is confirmed, start Category 8 - Change Gates & Guardrails. It directly covers Q6: agent freedom, large rework stop rules, and code cleanup.
-4. Defer the clean unsafe-memory rerun or realistic Experiment 004 until Category 8 has produced enough guardrail guidance to test.
+1. Create a scaffold-only validation capsule from `releases/v0.1/.agent-loop/`.
+2. Test blank-project flow: copy only `.agent-loop/` into a blank project, open with an agent, run the README starter prompt, confirm `.agent-loop/AGENTS.md` starts onboarding, fill `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md`, then perform one guarded edit.
+3. Test existing-project flow: copy only `.agent-loop/` into a small existing repo, run the README starter prompt, confirm the actor inspects first, avoids overwrites, and drafts `.agent-loop/GOAL.md` / `.agent-loop/STATUS.md`.
+4. Create packaging instructions for a GitHub Release ZIP whose archive root contains only `.agent-loop/`, not the full source repo.
+5. Alternative: run the clean unsafe-memory rerun if the Experiment 003 caveat still needs isolated validation.
 
 ---
 
 ## Blockers / Open Decisions
 
-- Category 6 is complete and closed out. v0.1 Goal decisions are now active before the next category choice.
+- Category 6 is complete and closed out. Category 8 is now active.
 - GitHub remote is configured as `origin`; `main` tracks `origin/main`.
 - Public name: `The Agent Loop`. Drop `The Agent Learning Loop` and `TALL` except as historical context. Repo slug: `the-agent-loop`. Preferred internal folder: `.agent-loop`.
 - v0.1 primary goal: minimal tested project-local one-agent scaffold supported by Experiments 001-003. Self-application is the operating method, not the v0.1 product surface.
@@ -102,6 +140,7 @@ Last updated: 2026-05-02
 - Category 13 (self-healing / preference learning) remains future scope.
 - Cross-project personalization is deferred. V1 `.agent-loop` is project-local; future CLI/shared-memory work may allow user preferences and learned tastes to carry across projects.
 - Framework evaluation/testing needs research: how to test goal pursuit, adaptability, stop-rule obedience, and signal-vs-noise discipline in Codex without creating fake confidence.
+- Experiment 004 passed with one caveat that has been converted into scaffold wording: record git/dirty state and checkpoint status before significant edits.
 
 ---
 
@@ -137,5 +176,8 @@ Recommended pickup:
 
 1. Read `docs/case-studies/cms-incubator.md`.
 2. Read `experiments/experiment-003-behavioral-obedience/evaluation/evaluator-review.md`.
-3. Define The Agent Loop v0.1 Goal.
-4. Decide whether to run a clean unsafe-memory test or proceed to a realistic small-project Experiment 004.
+3. Read `experiments/experiment-004-guardrail-realistic-edit/README.md`.
+4. Read `experiments/experiment-004-guardrail-realistic-edit/evaluation/evaluator-review.md`.
+5. Read `docs/research/category-8/6-v0.1-guardrail-adoption.md`.
+6. Review `releases/v0.1/.agent-loop/`.
+7. Create scaffold validation experiments for blank-project and existing-project adoption.
