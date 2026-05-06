@@ -20,6 +20,7 @@ Use The Agent Loop v0.2 inside this repository to guide v0.3 work.
 ## Rules
 
 - Keep active state under `.agent-loop/project/`.
+- Treat root `.agent-loop/` as the mutable self-application workspace where v0.3 candidate improvements are proven before release packaging.
 - Do not recreate legacy root `STATUS.md`, `BACKLOG.md`, `DECISIONS.md`, or root `memory/`.
 - Save meaningful decisions and handoffs in `.agent-loop/project/` files and monthly logs.
 - When a task is complete, refresh `.agent-loop/START.md` so the next session has a compact pickup point.

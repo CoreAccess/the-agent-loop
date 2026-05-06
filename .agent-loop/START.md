@@ -23,6 +23,10 @@ Updated: 2026-05-06
 - v0.2 is locked as the finished active release baseline. Do not change `releases/v0.2/.agent-loop/` except for an explicitly approved critical release packaging fix.
 - Root `AGENTS.md` is now only the v0.2 adapter. Active project state lives under `.agent-loop/project/`.
 - Legacy root `STATUS.md`, `BACKLOG.md`, `DECISIONS.md`, root `memory/`, and raw `experiments/` were removed after their useful state was distilled.
+- Deep research docs now use topic-first folder names: `project-bootstrap-and-onboarding/`, `memory-systems/`, and `change-gates-and-guardrails/`.
+- Docs navigation/loading guidance lives in `.agent-loop/project/systems/research-and-evidence.md`; do not recreate docs `README.md` files by default.
+- v0.1-era research docs were compressed into compact evidence briefs. Full historical drafts remain available in git history.
+- Root `.agent-loop/` is the mutable v0.3 development workspace. Do not create `releases/v0.3/` until an accepted release-candidate packaging step; never mutate frozen `releases/v0.2/.agent-loop/` for normal v0.3 work.
 - Current active goal is completed. Next session should choose the first v0.3 improvement goal from `.agent-loop/project/ROADMAP.md`.
 
 ## Known Environment

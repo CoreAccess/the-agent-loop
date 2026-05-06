@@ -1,54 +1,36 @@
 # Agent Loop v0.2 Import Case Study
 
 Date: 2026-05-06
+Status: compact applied-evidence note
 
-Update, 2026-05-06: v0.2 is now locked as the finished active scaffold release. Future product changes should target v0.3 unless the owner explicitly approves a critical v0.2 packaging correction.
+## Required Context
 
-## Source
+The owner imported a root `.agent-loop-v2/` folder from another active project and identified it as the practical v0.2 direction. The imported folder mixed reusable framework improvements with live source-project state, so it had to be sanitized before release.
 
-The owner imported a root `.agent-loop-v2/` folder from another active project and identified it as the practical v0.2 direction for The Agent Loop.
-
-The imported folder was not a clean release scaffold. It mixed reusable framework improvements with live project state from the source project.
+v0.2 is now locked as the finished active scaffold release. Future product changes target v0.3 unless the owner explicitly approves a critical v0.2 packaging correction.
 
 ## Reusable Improvements
 
-- A compact startup file: `.agent-loop/START.md`.
-- A framework rule file separate from the boot instructions: `.agent-loop/RULES.md`.
-- Reusable workflows in `.agent-loop/WORKFLOWS.md`.
-- Explicit operating modes: Intake, Goal, Read-Only Audit, Change, and Exception.
+- `START.md` for startup and handoff.
+- `RULES.md` for always-on framework behavior.
+- `WORKFLOWS.md` for reusable procedures.
+- Explicit modes: Intake, Goal, Read-Only Audit, Change, Exception.
 - One executable active goal under `.agent-loop/project/ACTIVE_GOAL.md`.
-- Accepted project direction under `.agent-loop/project/INTENT.md`.
-- Roadmap and parking lot separated from active execution scope.
-- System maps and optional system detail files for scalable project structure.
-- Observations for recurring environment facts and command skip rules.
-- Exception notes for durable evidence from failure loops or unsafe ambiguity.
-- Stronger safe-deletion workflow and constructive challenge loop.
+- Accepted intent, roadmap, system map, observations, logs, and exception notes under `.agent-loop/project/`.
+- Stronger safe-deletion and constructive-challenge rules.
 
 ## Excluded From Release Source
 
-- Live source-project handoff text.
-- Source-project product name, business details, stack choices, local database notes, URLs, commands, logs, and legal/compliance notes.
-- Monthly log history from the source project.
+- Source-project product name, business details, stack choices, local URLs, commands, logs, and legal/compliance notes.
+- Source-project handoff text and monthly log history.
+- Any live state that would make the release scaffold project-specific.
 
-## Merge Result
+## Applied Result
 
-Created `releases/v0.2/.agent-loop/` as a sanitized v0.2 source, then locked it as the finished active release.
+`releases/v0.2/.agent-loop/` became the sanitized release source. The release package principle stayed intact: the uploaded asset should contain only `.agent-loop/`, while onboarding creates or carefully updates root `AGENTS.md`.
 
-The draft keeps v0.1's package principle: the release asset should still contain only `.agent-loop/`, with root `AGENTS.md` created or carefully updated during onboarding.
+## Revisit Triggers
 
-v0.2 replaces v0.1's `GOAL.md`, `STATUS.md`, and `MEMORY.md` scaffold shape with a layered state model:
-
-- `START.md` for startup and handoff
-- `RULES.md` for always-on behavior
-- `WORKFLOWS.md` for reusable procedures
-- `project/INTENT.md` for accepted direction
-- `project/ACTIVE_GOAL.md` for executable scope
-- `project/ROADMAP.md` for future goals and parking lot
-- `project/SYSTEM_MAP.md` plus `project/systems/` for scalable structure
-- `project/OBSERVATIONS.md`, logs, and exception notes for durable operational evidence
-
-## Follow-Up Needed
-
-- Self-application in this repository should confirm startup loading, handoff quality, and second-prompt behavior.
-- The layered model should reduce context noise rather than spreading state across too many files.
-- Legacy v0.1 projects should receive a proposed migration path instead of silent deletion or overwrite of `GOAL.md`, `STATUS.md`, or `MEMORY.md`.
+- Designing the v0.3 release process.
+- Creating a migration path for v0.1 projects.
+- Checking whether the layered model reduces context noise or spreads state across too many files.
