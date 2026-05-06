@@ -2,7 +2,7 @@
 
 The Agent Loop is a research-backed framework for helping AI coding agents work with clearer goals, better memory, tighter feedback loops, and stronger human control.
 
-This repository is currently in the research and design phase. The intended output is a practical framework that can be reused across Codex, Claude Code, Gemini, and similar coding agents.
+This repository is the source workspace for a practical framework that can be reused across Codex, Claude Code, Gemini, and similar coding agents.
 
 ## Core Idea
 
@@ -28,13 +28,13 @@ The Agent Loop turns that loop into a repeatable project framework: agent instru
 
 ## Current Status
 
-This repository is the research and source workspace for The Agent Loop. It intentionally contains research notes, experiment capsules, decision logs, and draft scaffold files.
+This repository is the research and source workspace for The Agent Loop. It contains release package source, research notes, distilled case studies, and project-local Agent Loop state.
 
 It is not meant to be cloned directly as a user's project scaffold.
 
-The current active scaffold version is v0.2. v0.1 is retired and kept only as a frozen baseline.
+The current active scaffold version is v0.2. v0.1 is retired and kept only as a frozen baseline. Future product changes should target v0.3.
 
-See `STATUS.md` for the current pickup point and `memory/project_framework_qa.md` for the detailed decision record.
+This repository now self-applies The Agent Loop v0.2. Active project state lives under `.agent-loop/project/`.
 
 ## Use v0.2
 
@@ -82,6 +82,14 @@ v0.2 is merged from an applied `.agent-loop-v2` folder used in another project, 
 v0.1 is retired as the active install version and remains only as a frozen baseline for historical comparison, migration testing, and validation reference.
 
 The v0.1 release source lives at `releases/v0.1/.agent-loop/`. Do not use it for new installs unless you are intentionally testing legacy v0.1 behavior.
+
+## Repository Layout
+
+- `.agent-loop/` - active project-local Agent Loop v0.2 state used to build v0.3.
+- `releases/` - frozen release source folders and ZIP assets.
+- `docs/research/` - source-backed research notes.
+- `docs/case-studies/` - distilled lessons from incubators, imports, and validation work.
+- `README.md` - public project overview and install guide.
 
 ## Name
 

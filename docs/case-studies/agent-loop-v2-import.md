@@ -2,6 +2,8 @@
 
 Date: 2026-05-06
 
+Update, 2026-05-06: v0.2 is now locked as the finished active scaffold release. Future product changes should target v0.3 unless the owner explicitly approves a critical v0.2 packaging correction.
+
 ## Source
 
 The owner imported a root `.agent-loop-v2/` folder from another active project and identified it as the practical v0.2 direction for The Agent Loop.
@@ -30,7 +32,7 @@ The imported folder was not a clean release scaffold. It mixed reusable framewor
 
 ## Merge Result
 
-Created `releases/v0.2/.agent-loop/` as a sanitized v0.2 draft source.
+Created `releases/v0.2/.agent-loop/` as a sanitized v0.2 source, then locked it as the finished active release.
 
 The draft keeps v0.1's package principle: the release asset should still contain only `.agent-loop/`, with root `AGENTS.md` created or carefully updated during onboarding.
 
@@ -45,10 +47,8 @@ v0.2 replaces v0.1's `GOAL.md`, `STATUS.md`, and `MEMORY.md` scaffold shape with
 - `project/SYSTEM_MAP.md` plus `project/systems/` for scalable structure
 - `project/OBSERVATIONS.md`, logs, and exception notes for durable operational evidence
 
-## Validation Needed
+## Follow-Up Needed
 
-- Blank-project onboarding should still create root `AGENTS.md` and ask one question at a time.
-- Existing-project onboarding should merge only the marked root adapter block.
-- A second prompt after root adapter creation should load the right v0.2 context without requiring the user to repeat the starter prompt.
+- Self-application in this repository should confirm startup loading, handoff quality, and second-prompt behavior.
 - The layered model should reduce context noise rather than spreading state across too many files.
 - Legacy v0.1 projects should receive a proposed migration path instead of silent deletion or overwrite of `GOAL.md`, `STATUS.md`, or `MEMORY.md`.

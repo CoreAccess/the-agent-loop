@@ -2,6 +2,8 @@
 
 Date: 2026-05-02
 
+Update, 2026-05-06: the raw experiment capsules referenced in this case study were removed from the active repository during the v0.2 self-application cleanup. Their lessons are preserved here and in `docs/case-studies/agent-loop-validation-lessons.md`; git history preserves the original raw files.
+
 ## Summary
 
 This case study came from a separate `CMS` workspace that began as an AI/agent-first CMS and website-factory idea.
