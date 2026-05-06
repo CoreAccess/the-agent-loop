@@ -8,6 +8,7 @@ Preserve the reasoning and validation evidence behind framework decisions withou
 
 ## Owned Files
 
+- `docs/README.md`
 - `docs/research/`
 - `docs/case-studies/`
 
@@ -17,3 +18,4 @@ Preserve the reasoning and validation evidence behind framework decisions withou
 - Distill raw experiments into case studies or validation lessons before deleting raw capsules.
 - Do not treat self-application as proof by itself. Use it to generate hypotheses and v0.3 candidate changes.
 - For future validation, prefer compact external artifacts or case-study summaries over committing large nested experiment projects into this repo.
+- Every docs subfolder should have a short README index that explains when to load it.

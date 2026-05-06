@@ -19,6 +19,7 @@ It should help experienced AI-assisted developers run projects through a repeata
 - Done: v0.1 frozen as the historical baseline release.
 - Done: v0.2 locked as the active scaffold release with layered `.agent-loop/project/` state.
 - Done: Self-applied v0.2 inside this repository and cleaned legacy root state.
+- Done: Cleaned release ZIP tracking and added docs indexes for selective research loading.
 - Next: Use v0.2 to define the first v0.3 improvement goal.
 
 ## Future Goals

@@ -6,6 +6,9 @@
 .agent-loop/memory/private/
 *.private.md
 
+# Generated release assets
+releases/**/*.zip
+
 node_modules/
 dist/
 build/

@@ -9,7 +9,7 @@ Status: initialized
 - Git remote `origin` points to `https://github.com/CoreAccess/the-agent-loop.git`; `main` tracks `origin/main`.
 - `gh` was not installed during the v0.2 README publish flow, so direct git push was used instead of a GitHub CLI PR workflow.
 - v0.2 is locked as the finished active release. Future scaffold/product changes should target v0.3 unless the owner explicitly approves a critical v0.2 packaging correction.
-- Release ZIPs should contain only `.agent-loop/` entries.
+- Release ZIP assets should be generated/uploaded outside git. If a ZIP is built for release, it should contain only `.agent-loop/` entries.
 
 ## Resolved
 

@@ -25,6 +25,16 @@ This category is intentionally separate from Category 1 - Agent Contract. Catego
 - `5-developer-pain-and-reference-implementations.md`
 - `6-v0.1-guardrail-adoption.md`
 
+## Current Relevance
+
+Use this category when changing:
+
+- action gates and approval rules;
+- destructive cleanup or safe deletion behavior;
+- deploy, API, dependency, and external-effect policy;
+- checkpoint and sandbox guidance;
+- v0.3 guardrail improvements.
+
 ## Early Synthesis
 
 The decided v0.1 posture:

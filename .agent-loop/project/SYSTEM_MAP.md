@@ -28,7 +28,7 @@ Details:
 
 Function:
 
-- Store frozen release source folders and ZIP assets users install into other projects.
+- Store frozen release source folders used to build uploaded GitHub Release assets.
 
 Details:
 
@@ -75,5 +75,6 @@ Details:
 
 - v0.2 release artifacts are frozen as the current finished release.
 - v0.1 release artifacts are frozen as historical baseline.
+- Generated release ZIP files should not be tracked in git.
 - Root state files from the pre-v0.2 model should not be recreated.
 - Raw experiment capsules should stay out of the active repo after their lessons are distilled.

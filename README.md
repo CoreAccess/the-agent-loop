@@ -86,7 +86,7 @@ The v0.1 release source lives at `releases/v0.1/.agent-loop/`. Do not use it for
 ## Repository Layout
 
 - `.agent-loop/` - active project-local Agent Loop v0.2 state used to build v0.3.
-- `releases/` - frozen release source folders and ZIP assets.
+- `releases/` - frozen release source folders. Generated release ZIP files are uploaded to GitHub Releases, not tracked in git.
 - `docs/research/` - source-backed research notes.
 - `docs/case-studies/` - distilled lessons from incubators, imports, and validation work.
 - `README.md` - public project overview and install guide.

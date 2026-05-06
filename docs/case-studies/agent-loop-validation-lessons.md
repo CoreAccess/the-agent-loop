@@ -66,7 +66,7 @@ Main lesson:
 
 ## Lessons Promoted Into v0.2
 
-- Keep release ZIPs scoped to `.agent-loop/`.
+- Keep uploaded release ZIPs scoped to `.agent-loop/`.
 - Create or carefully merge root `AGENTS.md` during onboarding.
 - Ask concise onboarding questions one at a time.
 - Use active goal state to prevent broad intent from becoming executable scope.

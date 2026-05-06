@@ -20,10 +20,10 @@ Updated: 2026-05-06
 ## Current Handoff
 
 - This repository now self-applies The Agent Loop v0.2 to build v0.3.
-- v0.2 is locked as the finished active release baseline. Do not change `releases/v0.2/.agent-loop/` or `releases/v0.2/v0.2.zip` except for an explicitly approved critical release packaging fix.
+- v0.2 is locked as the finished active release baseline. Do not change `releases/v0.2/.agent-loop/` except for an explicitly approved critical release packaging fix.
 - Root `AGENTS.md` is now only the v0.2 adapter. Active project state lives under `.agent-loop/project/`.
 - Legacy root `STATUS.md`, `BACKLOG.md`, `DECISIONS.md`, root `memory/`, and raw `experiments/` were removed after their useful state was distilled.
-- Current active goal is completed. Next session should choose the first v0.3 improvement goal from `.agent-loop/project/ROADMAP.md` before implementation.
+- Current active goal is completed. Next session should choose the first v0.3 improvement goal from `.agent-loop/project/ROADMAP.md`.
 
 ## Known Environment
 

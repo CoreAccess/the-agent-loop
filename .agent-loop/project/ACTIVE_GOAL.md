@@ -7,50 +7,50 @@ Owner approval: accepted in chat on 2026-05-06.
 ## Parent
 
 - Intent: Self-apply The Agent Loop v0.2 to build v0.3.
-- System: Project operations.
-- Milestone: v0.2 self-application cleanup.
+- System: Research And Evidence; Release Packages.
+- Milestone: v0.2 self-application follow-up cleanup.
 
 ## Outcome
 
-Prepare this repository to use the v0.2 `.agent-loop/project/` model as its active operating system for v0.3 work.
+Clean up release ZIP tracking and add a navigable docs structure that matches the v0.2 research/evidence model.
 
 ## Done When
 
-- [x] Root `.agent-loop/` exists and is initialized from the finished v0.2 scaffold.
-- [x] Root `AGENTS.md` is only the v0.2 adapter.
-- [x] Current intent, roadmap, active goal, system map, observations, and handoff live under `.agent-loop/project/`.
-- [x] Useful experiment lessons are preserved in `docs/case-studies/`.
-- [x] Raw `experiments/`, root `memory/`, root `STATUS.md`, root `BACKLOG.md`, and root `DECISIONS.md` are removed.
-- [x] Root `README.md` describes the cleaned repository shape and v0.2/v0.3 status.
-- [x] Git diff is reviewed, validation checks passed, and workspace cleanliness will be verified after commit.
+- [x] `.gitignore` ignores generated release ZIP files.
+- [x] Tracked release ZIP files are removed from git while release source folders remain.
+- [x] Project state no longer treats ZIP files as tracked release package source.
+- [x] `docs/` has an entry-point README and indexes for research and case studies.
+- [x] Category research folders that already exist have lightweight indexes.
+- [x] Handoff/log state is updated for the next v0.3 planning step.
 
 ## Scope
 
 In scope:
 
-- Root `.agent-loop/` project state.
-- Root `AGENTS.md`.
-- Root `README.md`.
-- `docs/case-studies/`.
-- Removal of legacy root state and raw experiment capsules after distillation.
+- `.gitignore`
+- `README.md`
+- `.agent-loop/project/`
+- `docs/`
+- Removing tracked `releases/**/*.zip`
 
 Out of scope:
 
-- Editing frozen release source in `releases/v0.1/` or `releases/v0.2/`.
-- Designing v0.3 feature changes beyond capturing likely next goals.
-- Publishing a new release.
+- Editing frozen release source folders under `releases/v0.1/.agent-loop/` or `releases/v0.2/.agent-loop/`.
+- Rewriting source-backed research content.
+- Publishing GitHub Releases or uploading replacement ZIP assets.
 
 ## Stop Conditions
 
-- A file targeted for deletion contains unique, undistilled decisions or evidence.
+- A docs move would break useful source references without a clear replacement.
+- A cleanup would alter frozen release source folders.
 - Git shows unrelated user changes.
-- The cleanup would remove release artifacts or public docs needed for install/use.
 
 ## Verification
 
 ```text
 git status -sb
-git diff --stat
 git diff --check
-tar -tf releases/v0.2/v0.2.zip
+git ls-files "releases/*.zip" "releases/**/*.zip"
+Get-ChildItem -Recurse -Filter *.zip releases
+rg -n "v0[.]2[.]zip|v0[.]1[.]zip" README.md .agent-loop docs
 ```
