@@ -32,37 +32,56 @@ This repository is the research and source workspace for The Agent Loop. It inte
 
 It is not meant to be cloned directly as a user's project scaffold.
 
+The current active scaffold version is v0.2. v0.1 is retired and kept only as a frozen baseline.
+
 See `STATUS.md` for the current pickup point and `memory/project_framework_qa.md` for the detailed decision record.
 
-## Use v0.1
+## Use v0.2
 
-The v0.1 release is a scaffold-only ZIP for new or existing projects. It contains one folder:
+The v0.2 scaffold is the active install target for new or existing projects. It contains one folder:
 
 - `.agent-loop/`
 
 Install flow:
 
-1. Download the v0.1 scaffold ZIP asset from GitHub Releases.
+1. Download the v0.2 scaffold ZIP asset from GitHub Releases.
 2. Extract the ZIP.
 3. Copy `.agent-loop/` into the root of your new or existing project.
 4. Open that project in your coding agent.
 5. Paste the starter prompt below.
 
-Use the uploaded scaffold asset, not GitHub's automatic source-code ZIP. The source-code ZIP contains this full research repository.
+Use the uploaded scaffold asset, not GitHub's automatic source-code ZIP. The source-code ZIP contains this full research repository. Until a v0.2 release asset is published, the v0.2 source folder is `releases/v0.2/.agent-loop/`.
 
 Starter prompt:
 
 ```text
-Read `.agent-loop/AGENTS.md` and start The Agent Loop onboarding for this project. First create or carefully update root `AGENTS.md` so future prompts load The Agent Loop, then inspect the repo. If the project objective is not clear yet, explain that there are five quick onboarding questions and ask me Question 1 of 5 only. Do not suggest a project objective, do not draft `.agent-loop/GOAL.md` or `.agent-loop/STATUS.md`, and do not make code changes until the blocking questions are answered.
+Read `.agent-loop/AGENTS.md` and start The Agent Loop v0.2 onboarding for this project. First create or carefully update root `AGENTS.md` so future prompts load The Agent Loop, then inspect the repo. If project intent is not accepted yet, explain that a short intake is needed and ask Question 1 only. Do not make code changes until project intent and one active goal are accepted.
 ```
 
-The agent should create or carefully merge a root `AGENTS.md` adapter, inspect the repository, ask only for blocking setup decisions one at a time, then draft `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md` for approval before implementation.
+The agent should create or carefully merge a root `AGENTS.md` adapter, inspect the repository, ask only for blocking setup decisions one at a time, draft the project intent and one active goal for approval, then record accepted state under `.agent-loop/project/`.
 
-The same starter prompt is included inside `.agent-loop/README.md` in the release ZIP.
+The same starter prompt is intentionally included inside `.agent-loop/README.md` in the release ZIP so the package remains self-contained. This root README is the canonical public install guide.
 
 The ZIP should not include this repository's research archive, experiments, session memory, internal decision history, a root project `README.md`, a root prompt file, a root `AGENTS.md`, or a visible root `templates/` folder. Root `AGENTS.md` is created or updated by the onboarding agent after the user runs the starter prompt.
 
-The current v0.1 release source lives at `releases/v0.1/.agent-loop/`.
+The current v0.2 release source lives at `releases/v0.2/.agent-loop/`.
+
+## v0.2 Structure
+
+v0.2 is merged from an applied `.agent-loop-v2` folder used in another project, with project-specific state removed. The main v0.2 shift is a layered state model:
+
+- `.agent-loop/START.md` for startup and handoff
+- `.agent-loop/RULES.md` for always-on operating rules
+- `.agent-loop/WORKFLOWS.md` for reusable procedures
+- `.agent-loop/project/INTENT.md` for accepted project direction
+- `.agent-loop/project/ACTIVE_GOAL.md` for the one executable goal
+- `.agent-loop/project/ROADMAP.md`, `SYSTEM_MAP.md`, `OBSERVATIONS.md`, logs, systems, and exception notes for scoped supporting state
+
+## v0.1 Retired
+
+v0.1 is retired as the active install version and remains only as a frozen baseline for historical comparison, migration testing, and validation reference.
+
+The v0.1 release source lives at `releases/v0.1/.agent-loop/`. Do not use it for new installs unless you are intentionally testing legacy v0.1 behavior.
 
 ## Name
 

@@ -1147,3 +1147,27 @@ Does the Reflect skill automatically push learnings to the memory system, or doe
 - All future scaffold/product changes should land in v0.2, not v0.1.
 - Do not edit `releases/v0.1/.agent-loop/` or `releases/v0.1/v0.1.zip` unless the user explicitly approves a critical v0.1 packaging correction.
 - Next session should begin v0.2 planning from the lessons in Experiments 005-006, especially existing-project adoption, guided onboarding UX, and second-prompt behavior after root adapter creation.
+
+### v0.2 draft scaffold merge (decided 2026-05-06)
+- User imported a root `.agent-loop-v2/` folder from another project and identified it as the practical v0.2 direction to merge back into this framework repository.
+- The import contained reusable framework improvements but also live source-project state, so the release source must be sanitized rather than copied directly.
+- Created `releases/v0.2/.agent-loop/` as the v0.2 draft source. v0.1 remains frozen and untouched.
+- Adopted v0.2 draft shape: `START.md` for startup/handoff, `RULES.md` for always-on rules, `WORKFLOWS.md` for reusable procedures, and layered project state under `.agent-loop/project/`.
+- The v0.2 project state model uses `INTENT.md`, `ACTIVE_GOAL.md`, `ROADMAP.md`, `SYSTEM_MAP.md`, `OBSERVATIONS.md`, logs, system detail files, and exception notes. Only `ACTIVE_GOAL.md` is executable scope.
+- Kept the v0.1 package principle: a public release ZIP should contain only `.agent-loop/`; root `AGENTS.md` is created or carefully merged during onboarding.
+- Excluded PostMyWork-specific product, business, stack, local database, legal/compliance, command, URL, and log state from the v0.2 release source.
+- Added `docs/case-studies/agent-loop-v2-import.md` to preserve the applied evidence and validation needs.
+- Open questions: validate blank-project onboarding, existing-project root adapter merge, second-prompt behavior, v0.1-to-v0.2 migration behavior, and whether the root `.agent-loop-v2/` import folder should be deleted, archived, or kept as local reference.
+
+### v0.2 README install surface (decided 2026-05-06)
+- Root `README.md` is the canonical public install guide for the active v0.2 scaffold.
+- v0.1 is retired as the active install version and kept only as a frozen historical baseline for comparison, migration testing, and validation reference.
+- Keep `releases/v0.2/.agent-loop/README.md` inside the package because the release ZIP should contain only `.agent-loop/` while remaining self-contained after copy/install.
+- Do not add a sibling `releases/v0.2/README.md`; install guidance outside the package belongs in root `README.md`.
+- The public starter prompt should use the v0.2 `INTENT.md` / `ACTIVE_GOAL.md` model instead of v0.1 `GOAL.md` / `STATUS.md` wording.
+
+### v0.2 README update and GitHub publish (logged 2026-05-06)
+- User asked to update root `README.md` to use v0.2 as the newest framework version and retire v0.1.
+- Updated root `README.md` with `Use v0.2`, the v0.2 starter prompt, a v0.2 structure summary, and a `v0.1 Retired` section.
+- Updated `releases/v0.2/.agent-loop/README.md` so it identifies root `README.md` as canonical while preserving a package-local quickstart.
+- Updated `DECISIONS.md`, `BACKLOG.md`, `STATUS.md`, and this memory file to record the README/package README decision.

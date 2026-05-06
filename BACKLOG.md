@@ -50,9 +50,9 @@ Priority order is a recommendation — user decides at each cycle.
 
 ## Open Questions — Framework-Wide
 
-- **v0.2 planning:** v0.1 is frozen. Future scaffold/product changes should land in v0.2, starting from the lessons in Experiments 005-006.
-- **v0.2 scaffold validation:** Retest concise five-question onboarding, existing-project root `AGENTS.md` merge behavior, and downstream "second prompt" behavior after root adapter creation.
-- **README/release clarity:** For v0.2, replace any placeholder release wording with final GitHub Releases links and exact install wording.
+- **v0.2 draft validation:** Validate `releases/v0.2/.agent-loop/` as the new draft scaffold. Test blank-project onboarding, existing-project root `AGENTS.md` merge behavior, downstream second-prompt behavior after root adapter creation, and whether the layered `START`/`RULES`/`project` model stays concise in practice.
+- **v0.2 import cleanup:** After reviewing the sanitized draft source, decide whether the root `.agent-loop-v2/` import folder should be deleted, archived as an experiment/case-study fixture, or kept ignored as local reference material.
+- **README/release clarity:** Root `README.md` now presents v0.2 as the active install target. After publishing, replace the remaining placeholder GitHub Releases wording with the exact v0.2 asset link.
 - **Distribution mechanism:** v0.1 uses a GitHub Release ZIP containing only `.agent-loop/`. v0.2 can revisit separate starter repo, scaffold branch/tag, prompt placement, or packaging automation if validation shows friction.
 - **Framework evaluation/testing:** How do we test The Agent Loop itself for goal pursuit, adaptability, stop-rule obedience, signal-vs-noise discipline, and real-world usefulness inside Codex?
 - **File system structure:** How should the framework's own directory structure be organized as it grows?

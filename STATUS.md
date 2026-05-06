@@ -1,14 +1,14 @@
 # Project Status
 
-Last updated: 2026-05-02
+Last updated: 2026-05-06
 
 ---
 
 ## Where We Are
 
-**Phase:** v0.1 frozen; v0.2 planning next
+**Phase:** v0.2 draft scaffold merged from applied `.agent-loop-v2`
 **Active category:** None; Category 8 - Change Gates & Guardrails is complete.  
-**Cycle step:** v0.1 is accepted as good enough and should no longer receive product changes. Future scaffold/product changes should land in v0.2.
+**Cycle step:** v0.2 draft release source exists at `releases/v0.2/.agent-loop/`; validation and cleanup review are next. v0.1 remains frozen.
 
 ---
 
@@ -33,6 +33,15 @@ Last updated: 2026-05-02
 
 ## Completed In This Pickup
 
+- Reviewed the imported root `.agent-loop-v2/` folder.
+- Found that the import mixed reusable framework improvements with live PostMyWork project state.
+- Identified the reusable v0.2 model: `START.md`, `RULES.md`, `WORKFLOWS.md`, explicit modes, layered project state under `.agent-loop/project/`, one executable active goal, system maps, observations, logs, exception notes, a constructive challenge loop, and safe deletion workflow.
+- Created sanitized v0.2 draft source at `releases/v0.2/.agent-loop/`.
+- Preserved v0.1 by leaving `releases/v0.1/` untouched.
+- Added `docs/case-studies/agent-loop-v2-import.md` to record the import evidence, reusable improvements, excluded project-specific state, and validation needs.
+- Updated root `README.md`, `AGENTS.md`, `DECISIONS.md`, `BACKLOG.md`, and `memory/project_framework_qa.md` for the v0.2 draft merge.
+- Updated root `README.md` so v0.2 is the active install target, v0.1 is retired, and the v0.2 starter prompt is the public prompt.
+- Kept `releases/v0.2/.agent-loop/README.md` as the package-local quickstart so a ZIP containing only `.agent-loop/` remains self-contained.
 - Reviewed user-provided Experiment 005 launch-test output in `experiments/experiment-005-v01-launch-test-results/`.
 - Opened `agent-response.png`; actor reported updating only `.agent-loop/GOAL.md` and `.agent-loop/STATUS.md`.
 - Compared `agent-loop-results/` against `releases/v0.1/.agent-loop/`; only `GOAL.md` and `STATUS.md` differ.
@@ -144,9 +153,10 @@ Last updated: 2026-05-02
 
 ## Up Next
 
-1. Start v0.2 planning from the known v0.1 lessons: root `AGENTS.md` adapter, concise five-question onboarding, existing-project merge behavior, and self-contained scaffold README.
-2. Decide the first v0.2 validation target: existing-project onboarding, guided onboarding UX, or broader framework evaluation.
-3. Keep `releases/v0.1/` frozen as the baseline artifact.
+1. Review `releases/v0.2/.agent-loop/` as the current v0.2 draft source.
+2. Decide what to do with the imported root `.agent-loop-v2/` folder: delete after review, archive as an experiment/case-study fixture, or keep ignored as local reference material.
+3. Create a v0.2 validation experiment covering blank-project onboarding, existing-project root `AGENTS.md` merge behavior, and second-prompt behavior after root adapter creation.
+4. Keep `releases/v0.1/` frozen as the baseline artifact.
 
 ---
 
@@ -159,6 +169,8 @@ Last updated: 2026-05-02
 - v0.1 public loop wording: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`.
 - Goal artifact naming: use **Goal** in active/public framework language, not `Goal Packet` or `The Goal`. Historical experiment paths and titles may remain unchanged.
 - v0.1 is frozen as the baseline artifact. Future scaffold/product changes land on v0.2.
+- v0.2 draft source exists at `releases/v0.2/.agent-loop/`. It is not frozen and has no published ZIP yet.
+- The imported root `.agent-loop-v2/` folder remains untracked and contains source-project state. Do not delete it without user approval; decide cleanup after reviewing the sanitized v0.2 draft.
 - Local agent folder convention: use `.agents/` for project-local agent skills/config. Restart check confirmed `.codex/`, `.claude/`, and `.tmp/` are absent; `.agents/` exists and remains ignored.
 - Category 2 Q6 agent freedom / guardrails / cleanup was resolved through Category 8 research and Experiment 004, then promoted into the v0.1 scaffold.
 - Category 13 (self-healing / preference learning) remains future scope.
@@ -175,9 +187,10 @@ Last updated: 2026-05-02
 1. Read `AGENTS.md`.
 2. Read `memory/project_framework_qa.md`.
 3. Read this file for current state.
-4. Read `docs/case-studies/cms-incubator.md`.
-5. Read `experiments/experiment-003-behavioral-obedience/evaluation/evaluator-review.md`.
-6. Continue defining The Agent Loop v0.1 Goal one decision at a time.
+4. Read `docs/case-studies/agent-loop-v2-import.md`.
+5. Review `releases/v0.2/.agent-loop/`.
+6. Decide cleanup for the imported root `.agent-loop-v2/` folder.
+7. Create the v0.2 validation experiment.
 
 ## CMS Incubator Migration - 2026-05-02
 

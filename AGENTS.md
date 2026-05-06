@@ -45,7 +45,7 @@ When saving:
 
 ## 4. Current Phase
 
-**Phase: The Agent Loop v0.1 Goal and filesystem organization**
+**Phase: The Agent Loop v0.2 draft scaffold validation**
 
 **What's been completed:**
 - Broad sweep research: all 12 links → `docs/research/broad-sweep.md`
@@ -55,10 +55,11 @@ When saving:
 - CMS incubator artifacts migrated into `experiments/` and `docs/case-studies/`
 - Public name simplified to `The Agent Loop`
 - v0.1 public loop wording decided: `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`
+- v0.1 is frozen as the baseline artifact
+- Applied `.agent-loop-v2` improvements were sanitized into `releases/v0.2/.agent-loop/`
 
 **Immediate next action:**
-- Review filesystem organization, naming conventions, and scaling hygiene before choosing the next research or experiment task.
-- Note: Q6 (agent freedom + code cleanup) still needs dedicated research alongside Category 8 (Change Gates)
+- Review `releases/v0.2/.agent-loop/`, decide cleanup for the imported root `.agent-loop-v2/` folder, then create a v0.2 validation experiment for blank-project onboarding, existing-project root `AGENTS.md` merge behavior, and second-prompt behavior.
 
 ## 5. Categories (v2 — post broad-sweep research)
 
@@ -85,8 +86,10 @@ When saving:
 ├── BACKLOG.md                       # Open questions + future work
 ├── README.md                        # Public project overview
 ├── releases/                        # Release package source folders
-│   └── v0.1/
-│       └── .agent-loop/             # v0.1 folder users copy into projects
+│   ├── v0.1/
+│   │   └── .agent-loop/             # v0.1 folder users copy into projects
+│   └── v0.2/
+│       └── .agent-loop/             # v0.2 draft source, not frozen yet
 ├── .agents/                         # Local agent skills/config, ignored
 ├── memory/
 │   ├── MEMORY.md                    # Memory index

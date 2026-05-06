@@ -21,6 +21,8 @@ Quick reference for major decisions. Full narrative and rationale in `memory/pro
 | 2026-05-02 | Goal artifact naming | Stop calling the goal artifact `Goal Packet` or `The Goal` in active/public framework language. Refer to it as **Goal**. Historical experiment paths and titles may remain unchanged. |
 | 2026-05-02 | v0.1 public loop wording | `Research -> Save Findings -> Goal -> Build -> Log Work -> Check -> Reflect -> Adopt`. |
 | 2026-05-02 | v0.1 frozen baseline | v0.1 is good enough after the latest onboarding fixes. Stop changing v0.1 release source; future product changes land in v0.2 unless a critical packaging correction is explicitly approved. |
+| 2026-05-06 | v0.2 draft merge | Merge the imported `.agent-loop-v2` improvements as a sanitized v0.2 draft source at `releases/v0.2/.agent-loop/`. Keep v0.1 frozen. Exclude project-specific PostMyWork state from the release source. |
+| 2026-05-06 | v0.2 README install surface | Make root `README.md` the canonical public install guide for active v0.2. Keep `releases/v0.2/.agent-loop/README.md` inside the package so the release ZIP remains self-contained. Do not create a sibling `releases/v0.2/README.md`. |
 | 2026-05-02 | Local agent folder | Use `.agents/` for local project agent skills/config instead of `.codex/`. Keep local agent folders ignored. |
 | 2026-04-29 | Framework folder bootstrap | Superseded by `releases/`: originally created only `.agent-loop/README.md` to reserve the folder name. |
 
