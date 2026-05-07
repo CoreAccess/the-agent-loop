@@ -34,7 +34,7 @@ Read `Load First`, then apply `Startup Decision`.
 - Docs navigation/loading guidance lives in `.agent-loop/project/systems/research-and-evidence.md`; do not recreate docs `README.md` files by default.
 - v0.1-era research docs were compressed into compact evidence briefs. Full historical drafts remain available in git history.
 - HumanLayer/CodeLayer orientation research was captured in `docs/research/humanlayer-codelayer-agent-workflows.md`; revisit it before selecting planning, reusable skills, validation, context loading, external memory, multi-agent orchestration, or control-plane tooling work.
-- Current active goal is completed: v0.3 release candidate alignment, root README update, and GitHub publish.
+- Current active goal is completed: root README public-surface refresh and GitHub About copy suggestion.
 - Next session should choose the first post-v0.3 improvement goal from `.agent-loop/project/ROADMAP.md`.
 
 ## Known Environment

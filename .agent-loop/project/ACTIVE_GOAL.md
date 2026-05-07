@@ -6,44 +6,40 @@ Owner approval: requested and accepted in chat on 2026-05-07.
 
 ## Parent
 
-- Intent: Self-apply The Agent Loop v0.3.
-- System: Release Packages; Public Surface; Project Operations.
-- Milestone: v0.3 release alignment.
+- Intent: Improve The Agent Loop public surface.
+- System: Public Surface; Project Operations.
+- Milestone: post-v0.3 public README alignment.
 
 ## Outcome
 
-Adopt the locked v0.3 release candidate as the active project operating model, update the root public README for the simpler v0.3 install flow, and publish the aligned repository state to GitHub.
+Rewrite the root README so the public entry point is shorter, clearer, more specific about the value of The Agent Loop, and aligned with the v0.3 install flow.
 
 ## Done When
 
-- [x] `releases/v0.3/.agent-loop/` is treated as locked and remains unmodified.
-- [x] Root `AGENTS.md` points future sessions directly to `.agent-loop/START.md`.
-- [x] Root `.agent-loop/` uses v0.3-style workflow files under `.agent-loop/workflows/`.
-- [x] Root `README.md` describes v0.3 as the active install target and uses the simpler starter prompt.
-- [x] Project state, handoff, and logs reflect v0.3 as the active self-application version.
-- [x] Repository changes are committed and pushed to GitHub.
-- [x] A one-line human-readable GitHub Releases description is provided to the owner.
+- [x] Root `README.md` explains the project in user-facing value terms instead of internal release-note terms.
+- [x] The README keeps the v0.3 install flow concise and warns users to use the uploaded release ZIP asset.
+- [x] The README stays clear that this repository is the source workspace, not the framework install to clone directly.
+- [x] A better GitHub About text block is proposed to the owner.
+- [x] Handoff and log state are updated.
 
 ## Scope
 
 In scope:
 
 - `README.md`
-- `AGENTS.md`
-- `.agent-loop/`
-- `docs/research/humanlayer-codelayer-agent-workflows.md`
-- `releases/v0.3/`
-- `.gitignore`
+- `.agent-loop/START.md`
+- `.agent-loop/project/ACTIVE_GOAL.md`
+- `.agent-loop/project/logs/2026-05.md`
 
 Out of scope:
 
 - Editing or changing `releases/v0.3/.agent-loop/`.
-- Uploading the v0.3 ZIP asset to GitHub Releases.
+- Updating the GitHub repository About field directly.
+- Committing or pushing without an explicit request.
 
 ## Verification
 
 ```text
 git diff --check
-rg -n "\\.agent-loop/AGENTS\\.md|\\.agent-loop/WORKFLOWS\\.md" AGENTS.md README.md .agent-loop --hidden --glob "!**/ACTIVE_GOAL.md"
 git status -sb
 ```
