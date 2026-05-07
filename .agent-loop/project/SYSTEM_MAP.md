@@ -12,7 +12,7 @@ Map the active systems in this repository so future work can load only the conte
 
 Function:
 
-- Run this repository through The Agent Loop v0.2 while building v0.3.
+- Run this repository through The Agent Loop v0.3 while preparing future improvements.
 - Own active intent, roadmap, active goal, observations, logs, and handoff.
 
 Details:
@@ -34,6 +34,7 @@ Details:
 
 - `releases/v0.1/`
 - `releases/v0.2/`
+- `releases/v0.3/`
 - `.agent-loop/project/systems/release-packages.md`
 
 ### Research And Evidence
@@ -73,7 +74,8 @@ Details:
 
 ## Current Constraints
 
-- v0.2 release artifacts are frozen as the current finished release.
+- v0.3 release artifacts are frozen as the current finished release.
+- v0.2 release artifacts are frozen as the previous finished release.
 - v0.1 release artifacts are frozen as historical baseline.
 - Generated release ZIP files should not be tracked in git.
 - Root state files from the pre-v0.2 model should not be recreated.

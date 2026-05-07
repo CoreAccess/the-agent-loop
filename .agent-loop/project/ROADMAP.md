@@ -22,12 +22,14 @@ It should help experienced AI-assisted developers run projects through a repeata
 - Done: Cleaned release ZIP tracking and moved docs inventory/loading guidance into `.agent-loop/project/` system state.
 - Done: Compressed v0.1-era research docs into compact evidence briefs.
 - Done: Decided root `.agent-loop/` is the mutable v0.3 development workspace; `releases/v0.3/` is created only for release-candidate packaging.
-- Next: Use v0.2 to define the first v0.3 improvement goal.
+- Done: v0.3 release candidate is locked under `releases/v0.3/.agent-loop/`.
+- Done: Self-applied v0.3 inside this repository and updated the public README install flow.
+- Next: Choose the first post-v0.3 improvement goal.
 
 ## Future Goals
 
-- Validate v0.2 self-application behavior after the root adapter is active: startup loading, second-prompt behavior, and handoff quality.
-- Identify v0.3 improvements from using v0.2 in this repo.
+- Validate v0.3 self-application behavior after the root adapter is active: startup loading, second-prompt behavior, workflow loading, and handoff quality.
+- Identify future improvements from using v0.3 in this repo.
 - Research remaining categories when they directly inform v0.3:
   - Category 1: Agent Contract.
   - Category 3: Planning and Architecture Docs.
@@ -38,9 +40,10 @@ It should help experienced AI-assisted developers run projects through a repeata
   - Category 10: Error Handling and Recovery.
   - Category 11: Agentic Patterns.
   - Category 12: Observable Development.
-- Replace placeholder GitHub Releases wording with exact v0.2 release asset links after the release is published.
-- Create a v0.3 validation path that tests behavior in a real or isolated repo without reintroducing a bulky raw `experiments/` tree into this repo.
+- Replace placeholder GitHub Releases wording with exact v0.3 release asset links after the release is published.
+- Create a future validation path that tests behavior in a real or isolated repo without reintroducing a bulky raw `experiments/` tree into this repo.
 - Build the onboarding skill and public documentation after the core repo workflow stabilizes.
+- Revisit `docs/research/humanlayer-codelayer-agent-workflows.md` before selecting v0.3 planning, skills, validation, context-loading, external-memory, multi-agent, or control-plane work.
 
 ## Parking Lot
 

@@ -20,6 +20,7 @@ Research:
 - `docs/research/broad-sweep.md` - first-pass validation across the original source set and category list.
 - `docs/research/agentic-engineering-brendan-oleary.md` - supporting out-of-cycle talk note.
 - `docs/research/future-goal-systems-and-decision-loops.md` - future research seed for goal contracts, decision loops, and evaluation.
+- `docs/research/humanlayer-codelayer-agent-workflows.md` - orientation research on HumanLayer/CodeLayer workflow patterns relevant to v0.3.
 - `docs/research/project-bootstrap-and-onboarding/summary.md` - Category 2: Project Bootstrap and Onboarding.
 - `docs/research/memory-systems/summary.md` - Category 6: Memory Systems.
 - `docs/research/change-gates-and-guardrails/summary.md` - Category 8: Change Gates and Guardrails.

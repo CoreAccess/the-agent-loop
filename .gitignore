@@ -1,25 +1,7 @@
-.tmp/
-.gocache/
-.edge-profile/
-
-# Agent Loop private memory
-.agent-loop/memory/private/
-*.private.md
-
 # Generated release assets
 releases/**/*.zip
-
-node_modules/
-dist/
-build/
-
-.DS_Store
-Thumbs.db
 
 # Local agent-specific folders
 .agents/*
 .claude/*
 .codex/*
-
-AGENTS-SAMPLE.md
-transcript.md
